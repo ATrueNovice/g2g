@@ -38,7 +38,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
-                    print("SNAP: \(snap)")
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
@@ -109,18 +108,35 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? PostCell {
 
-        let post = posts[indexPath.row]
+            let venueName = posts[indexPath.row]
+            let venueAddress = posts[indexPath.row]
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell") as? PostCell {
-            cell.configureCell(post: post)
-            print("We Good")
+            cell.updateUI(nameUpdate: venueName, addressUpdate: venueAddress)
             return cell
         } else {
-            print("Some Shit Went Left")
             return PostCell()
         }
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        performSegue(withIdentifier: "previewSegue", sender: post)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if let destination = segue.destination as? PreviewVC {
+            if let update = sender as? Post {
+                destination.locationData = update
+                if let update2 = sender as? Post {
+                destination.addressData = update2
+                }
+
+            }
+        }
+    }
 
 }
+

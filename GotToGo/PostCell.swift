@@ -11,8 +11,8 @@ import Firebase
 
 class PostCell: UITableViewCell {
 
-    @IBOutlet weak var nameCell: UILabel!
-    @IBOutlet weak var addressCell: UILabel!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var handicapLbl: UILabel!
 
     var post: Post!
@@ -24,9 +24,14 @@ class PostCell: UITableViewCell {
 
     func configureCell(post: Post){
         self.post = post
-        self.nameCell.text = post.locationName
-        self.addressCell.text = post.address
+        self.nameLbl.text = post.locationName
+        self.addressLbl.text = post.address
         self.handicapLbl.text = post.handicap
+    }
+
+    func updateUI(nameUpdate: Post, addressUpdate: Post) {
+        nameLbl.text = nameUpdate.locationName
+        addressLbl.text = addressUpdate.address
     }
 
 
