@@ -29,10 +29,4 @@ class PostCell: UITableViewCell {
         self.handicapLbl.text = post.handicap
     }
 
-    func updateUI(nameUpdate: Post, addressUpdate: Post) {
-        nameLbl.text = nameUpdate.locationName
-        addressLbl.text = addressUpdate.address
-    }
-
-
 }

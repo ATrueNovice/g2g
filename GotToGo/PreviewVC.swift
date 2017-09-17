@@ -10,11 +10,11 @@ import UIKit
 
 class PreviewVC: UIViewController {
 
-    @IBOutlet weak var locationClickedLbl: UILabel!
-    @IBOutlet weak var addressClickedLbl: UILabel!
+    @IBOutlet weak var locationLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
 
     private var _locationData: Post!
-    private var _addressData: Post!
+    private var _addressLbl: Post!
 
 
 
@@ -29,9 +29,9 @@ class PreviewVC: UIViewController {
 
     var addressData: Post {
         get {
-            return _addressData
+            return _addressLbl
         } set {
-          _addressData = newValue
+            _addressLbl = newValue
         }
     }
 
@@ -41,8 +41,8 @@ class PreviewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    locationClickedLbl.text =  locationData.locationName
-      addressClickedLbl.text = addressData.address
-
+        locationLbl.text =  locationData.locationName
+        addressLbl.text = addressData.address
     }
+
 }

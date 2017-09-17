@@ -211,7 +211,6 @@
                                                     <outlet property="addressLbl" destination="JpG-4k-3sk" id="viA-M5-kIr"/>
                                                     <outlet property="handicapLbl" destination="BEt-0V-VMU" id="gnL-6o-MEy"/>
                                                     <outlet property="nameLbl" destination="gs6-wd-9Ai" id="UzQ-Bq-o1x"/>
-                                                    <segue destination="yOE-ox-IjG" kind="show" identifier="previewSegue" id="PMB-sY-8ih"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -254,6 +253,7 @@
                     <connections>
                         <outlet property="mapView" destination="J1Q-yC-46C" id="Ysj-eG-8GA"/>
                         <outlet property="tableView" destination="QAL-1I-eRF" id="Ipr-gA-dQS"/>
+                        <segue destination="yOE-ox-IjG" kind="show" identifier="previewSegue" id="FfC-Tl-fTP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2f-e2-afo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,11 +290,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="addressClickedLbl" destination="A6l-WF-3iR" id="ulW-gD-7od"/>
-                        <outlet property="addressLbl" destination="A6l-WF-3iR" id="BwF-Bu-z8E"/>
-                        <outlet property="locationClickedLbl" destination="YDu-YO-1MK" id="YxR-Wc-GR0"/>
-                        <outlet property="locationLbl" destination="YDu-YO-1MK" id="Wef-bA-eUB"/>
-                        <outlet property="locationName" destination="YDu-YO-1MK" id="qIn-8b-xFT"/>
+                        <outlet property="addressLbl" destination="A6l-WF-3iR" id="nf6-vl-obz"/>
+                        <outlet property="locationLbl" destination="YDu-YO-1MK" id="mhM-IY-MeW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-Tg-ub0" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -102,23 +102,24 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         return annotationView
     }
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
 
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? PostCell {
+        let cellData = posts[indexPath.row]
 
-            let venueName = posts[indexPath.row]
-            let venueAddress = posts[indexPath.row]
-
-            cell.updateUI(nameUpdate: venueName, addressUpdate: venueAddress)
+        cell.configureCell(post: cellData)
             return cell
         } else {
             return PostCell()
         }
     }
+
+
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.row]
@@ -128,15 +129,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let destination = segue.destination as? PreviewVC {
-            if let update = sender as? Post {
+            if let update = sender as? Post, let update2 = sender as? Post {
                 destination.locationData = update
-                if let update2 = sender as? Post {
                 destination.addressData = update2
-                }
-
             }
+
         }
     }
-
 }
-
