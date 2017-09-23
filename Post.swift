@@ -16,6 +16,8 @@ class Post {
     private var _address: String!
     private var _handicap: String!
     private var _postKey: String!
+    private var _latitude: Double!
+    private var _longitude: Double!
     private var _postRef: DatabaseReference!
 
 
@@ -35,10 +37,20 @@ class Post {
         return _postKey
     }
 
+    var latitude: Double {
+        return _latitude
+    }
+
+    var longitude: Double {
+        return _longitude
+    }
+
     init(locationName: String, address: String, handicap: String) {
-        self._locationName = locationName
-        self._address = address
-        self._handicap = handicap
+        self._locationName = locationName.capitalized
+        self._address = address.capitalized
+        self._handicap = handicap.capitalized
+        self._latitude = latitude
+        self._longitude = longitude
     }
 
     init(postKey: String, postData: Dictionary<String, AnyObject>) {
@@ -55,6 +67,14 @@ class Post {
 
         if let handicap = postData["HANDICAP"] as? String {
             self._handicap = handicap
+        }
+
+        if let latitude = postData["LATITUDE"] as? Double {
+            self._latitude = latitude
+        }
+
+        if let longitude = postData["LONGITUDE"] as? Double {
+            self._longitude = longitude
         }
 
         _postRef = DataService.ds.REF_VENUE.child(_postKey)

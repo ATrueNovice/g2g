@@ -35,14 +35,17 @@ class PreviewVC: UIViewController {
         }
     }
 
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
 
+    }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        locationLbl.text =  locationData.locationName
-        addressLbl.text = addressData.address
+        locationLbl.text =  locationData.locationName.capitalized
+        addressLbl.text = addressData.address.capitalized
     }
 
 }

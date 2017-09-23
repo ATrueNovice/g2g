@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Firebase
+import CoreLocation
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -42,6 +43,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
+
                     }
                 }
             }
@@ -55,6 +57,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         locationAuthStatus()
     }
 
+
+//    func mapLocation() {
+//        let mapData = posts[indexPath.row]
+//    }
 
     //Checks if app is authorized to get user's location data.
     func locationAuthStatus () {

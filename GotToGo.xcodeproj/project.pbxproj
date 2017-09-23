@@ -15,6 +15,12 @@
 		6518D4161F5C84E200B7591D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4151F5C84E200B7591D /* FeedVC.swift */; };
 		6518D4181F5C883B00B7591D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4171F5C883B00B7591D /* PostCell.swift */; };
 		6518D41A1F5DBEB700B7591D /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4191F5DBEB700B7591D /* PreviewVC.swift */; };
+		65B2B9181F75885600A6BD0A /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B90F1F75885600A6BD0A /* GeoFire.m */; };
+		65B2B9191F75885600A6BD0A /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B9111F75885600A6BD0A /* GFBase32Utils.m */; };
+		65B2B91A1F75885600A6BD0A /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B9131F75885600A6BD0A /* GFGeoHash.m */; };
+		65B2B91B1F75885600A6BD0A /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B9151F75885600A6BD0A /* GFGeoHashQuery.m */; };
+		65B2B91C1F75885600A6BD0A /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B9171F75885600A6BD0A /* GFQuery.m */; };
+		65B2B9211F771C7D00A6BD0A /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B9201F771C7D00A6BD0A /* MapData.swift */; };
 		65DC001D1F5B647900783254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC001C1F5B647900783254 /* AppDelegate.swift */; };
 		65DC001F1F5B647900783254 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC001E1F5B647900783254 /* SignIn.swift */; };
 		65DC00221F5B647900783254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65DC00201F5B647900783254 /* Main.storyboard */; };
@@ -32,6 +38,23 @@
 		6518D4151F5C84E200B7591D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		6518D4171F5C883B00B7591D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6518D4191F5DBEB700B7591D /* PreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
+		65B2B9081F75885600A6BD0A /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		65B2B9091F75885600A6BD0A /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		65B2B90A1F75885600A6BD0A /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		65B2B90B1F75885600A6BD0A /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		65B2B90C1F75885600A6BD0A /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		65B2B90E1F75885600A6BD0A /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		65B2B90F1F75885600A6BD0A /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		65B2B9101F75885600A6BD0A /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		65B2B9111F75885600A6BD0A /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		65B2B9121F75885600A6BD0A /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		65B2B9131F75885600A6BD0A /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		65B2B9141F75885600A6BD0A /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		65B2B9151F75885600A6BD0A /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		65B2B9161F75885600A6BD0A /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
+		65B2B9171F75885600A6BD0A /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		65B2B91D1F770A9200A6BD0A /* GotToGo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GotToGo-Bridging-Header.h"; sourceTree = "<group>"; };
+		65B2B9201F771C7D00A6BD0A /* MapData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		65DC00191F5B647900783254 /* GotToGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotToGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DC001C1F5B647900783254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65DC001E1F5B647900783254 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
@@ -78,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				6518D4171F5C883B00B7591D /* PostCell.swift */,
+				65B2B9201F771C7D00A6BD0A /* MapData.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -109,6 +133,44 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		65B2B9061F75885600A6BD0A /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				65B2B9071F75885600A6BD0A /* API */,
+				65B2B90C1F75885600A6BD0A /* GeoFire-Prefix.pch */,
+				65B2B90D1F75885600A6BD0A /* Implementation */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		65B2B9071F75885600A6BD0A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				65B2B9081F75885600A6BD0A /* GeoFire.h */,
+				65B2B9091F75885600A6BD0A /* GFCircleQuery.h */,
+				65B2B90A1F75885600A6BD0A /* GFQuery.h */,
+				65B2B90B1F75885600A6BD0A /* GFRegionQuery.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		65B2B90D1F75885600A6BD0A /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				65B2B90E1F75885600A6BD0A /* GeoFire+Private.h */,
+				65B2B90F1F75885600A6BD0A /* GeoFire.m */,
+				65B2B9101F75885600A6BD0A /* GFBase32Utils.h */,
+				65B2B9111F75885600A6BD0A /* GFBase32Utils.m */,
+				65B2B9121F75885600A6BD0A /* GFGeoHash.h */,
+				65B2B9131F75885600A6BD0A /* GFGeoHash.m */,
+				65B2B9141F75885600A6BD0A /* GFGeoHashQuery.h */,
+				65B2B9151F75885600A6BD0A /* GFGeoHashQuery.m */,
+				65B2B9161F75885600A6BD0A /* GFQuery+Private.h */,
+				65B2B9171F75885600A6BD0A /* GFQuery.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		65DC00101F5B647800783254 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +192,7 @@
 		65DC001B1F5B647900783254 /* GotToGo */ = {
 			isa = PBXGroup;
 			children = (
+				65B2B9061F75885600A6BD0A /* GeoFire */,
 				6518D4081F5C0B0800B7591D /* Constants */,
 				6518D4071F5C0AFF00B7591D /* Utilities */,
 				6518D4061F5C0AF800B7591D /* Controller */,
@@ -141,6 +204,7 @@
 				65DC00251F5B647900783254 /* LaunchScreen.storyboard */,
 				65DC00281F5B647900783254 /* Info.plist */,
 				6518D4111F5C118700B7591D /* GoogleService-Info.plist */,
+				65B2B91D1F770A9200A6BD0A /* GotToGo-Bridging-Header.h */,
 			);
 			path = GotToGo;
 			sourceTree = "<group>";
@@ -301,12 +365,18 @@
 				6518D4101F5C109A00B7591D /* TextBoxes.swift in Sources */,
 				6518D4161F5C84E200B7591D /* FeedVC.swift in Sources */,
 				6518D40C1F5C0EC500B7591D /* DataService.swift in Sources */,
+				65B2B91B1F75885600A6BD0A /* GFGeoHashQuery.m in Sources */,
+				65B2B9191F75885600A6BD0A /* GFBase32Utils.m in Sources */,
 				65DC001F1F5B647900783254 /* SignIn.swift in Sources */,
 				6518D4141F5C61B000B7591D /* Post.swift in Sources */,
 				65DC001D1F5B647900783254 /* AppDelegate.swift in Sources */,
 				6518D40E1F5C104D00B7591D /* constants.swift in Sources */,
 				6518D41A1F5DBEB700B7591D /* PreviewVC.swift in Sources */,
 				6518D4181F5C883B00B7591D /* PostCell.swift in Sources */,
+				65B2B91A1F75885600A6BD0A /* GFGeoHash.m in Sources */,
+				65B2B9181F75885600A6BD0A /* GeoFire.m in Sources */,
+				65B2B9211F771C7D00A6BD0A /* MapData.swift in Sources */,
+				65B2B91C1F75885600A6BD0A /* GFQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.default.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -449,6 +520,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.default.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
