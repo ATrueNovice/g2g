@@ -24,9 +24,9 @@ class PostCell: UITableViewCell {
 
     func configureCell(post: Post){
         self.post = post
-        self.nameLbl.text = post.locationName
-        self.addressLbl.text = post.address
-        self.handicapLbl.text = post.handicap
+        self.nameLbl.text = post.locationName.capitalized
+        self.addressLbl.text = post.address.capitalized
+        self.handicapLbl.text = post.handicap.capitalized
     }
 
 }

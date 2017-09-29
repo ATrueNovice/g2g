@@ -19,6 +19,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
     let locationManager = CLLocationManager()
     var centerMapped = false
+    var geoFire: GeoFire!
+    var geoFireRef: DatabaseReference!
+
 
 
 
@@ -29,6 +32,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
         mapView.delegate = self
         mapView.userTrackingMode = MKUserTrackingMode.follow
+
+        geoFireRef = Database.database().reference()
+        geoFire = GeoFire(firebaseRef: geoFireRef)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -108,12 +114,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
+        //User Annotation
         if annotation.isKind(of: MKUserLocation.self) {
             let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
             annotationView.image = UIImage(named: "icon")
             return annotationView
         }
 
+        //Venue Annotation
         let reuseId = "Image"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         if annotationView == nil {
@@ -127,6 +135,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
         return annotationView
     }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
