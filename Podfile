@@ -13,7 +13,6 @@ target 'GotToGo' do
 	pod ‘Firebase/Storage’
 	pod ‘FBSDKLoginKit’
     pod 'SwiftKeychainWrapper'
-	pod 'Fabric'
-	pod 'Crashlytics'
+pod 'GoogleSignIn'
 
 end

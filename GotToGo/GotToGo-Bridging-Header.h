@@ -7,3 +7,5 @@
 //
 
 #import "Geofire.h"
+#import <GoogleSignIn/GoogleSignIn.h>
+

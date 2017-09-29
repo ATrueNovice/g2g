@@ -18,8 +18,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
 
     let locationManager = CLLocationManager()
-
     var centerMapped = false
+
 
 
     var posts = [Post]()
@@ -43,6 +43,21 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
+                    }
+
+                if let locationDict = snap.value as? Dictionary<String, AnyObject> {
+
+                    let lat = locationDict["LATITUDE"] as! CLLocationDegrees
+                    let long = locationDict["LONGITUDE"] as! CLLocationDegrees
+                    let title = locationDict["NAME"] as! String
+                    let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                    _ = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.10, longitudeDelta: 0.10))
+
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2DMake(lat, long)
+                    annotation.title = title.capitalized
+                    self.mapView.addAnnotation(annotation)
+
 
                     }
                 }
@@ -57,10 +72,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         locationAuthStatus()
     }
 
-
-//    func mapLocation() {
-//        let mapData = posts[indexPath.row]
-//    }
 
     //Checks if app is authorized to get user's location data.
     func locationAuthStatus () {
@@ -92,19 +103,28 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                 centerMapOnLocation(location: loc)
                 centerMapped = true
             }
-
         }
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
-        var annotationView: MKAnnotationView?
-
         if annotation.isKind(of: MKUserLocation.self) {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
-            annotationView?.image = UIImage(named: "icon")
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
+            annotationView.image = UIImage(named: "icon")
+            return annotationView
         }
-        
+
+        let reuseId = "Image"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            annotationView?.canShowCallout = true
+            annotationView?.image = UIImage(named: "toliet")
+        }
+        else {
+            annotationView?.annotation = annotation
+        }
+
         return annotationView
     }
 

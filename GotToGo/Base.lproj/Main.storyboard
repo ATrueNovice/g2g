@@ -106,6 +106,7 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="uvh-TV-e6o" id="pmn-fy-PhW"/>
+                        <outlet property="googleSignIn" destination="80q-Ta-NOO" id="w4V-Ie-RgF"/>
                         <outlet property="passwordField" destination="uOF-Vt-ecH" id="43Q-zv-7so"/>
                         <segue destination="ivx-rO-21f" kind="show" identifier="goToFeed" id="gbJ-SZ-9GD"/>
                     </connections>
@@ -138,14 +139,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="yv2-fY-TDP">
                                         <rect key="frame" x="5" y="310" width="365" height="31.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Closest Bathrooms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxA-n1-Bvl">
-                                                <rect key="frame" x="0.0" y="7.5" width="115" height="16.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Closest Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxA-n1-Bvl">
+                                                <rect key="frame" x="0.0" y="7.5" width="108.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-QK-BVY">
-                                                <rect key="frame" x="161.5" y="7.5" width="48.5" height="16.5"/>
+                                                <rect key="frame" x="159.5" y="7.5" width="48.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -169,7 +170,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="53"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8yB-YN-oc7" id="8Qr-Z9-uWe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GBj-Pf-onj">
@@ -183,7 +184,7 @@
                                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="135-09 Westchester Boulevard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-4k-3sk">
-                                                                    <rect key="frame" x="119.5" y="0.0" width="120" height="33"/>
+                                                                    <rect key="frame" x="120" y="0.0" width="119.5" height="33"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="120" id="0yC-3y-Tgz"/>
                                                                     </constraints>

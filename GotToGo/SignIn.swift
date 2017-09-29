@@ -10,13 +10,18 @@ import Firebase
 import SwiftKeychainWrapper
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GoogleSignIn
 
-class SignIn: UIViewController {
+class SignIn: UIViewController, GIDSignInUIDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var googleSignIn: GIDSignInButton!
 
     override func viewDidLoad() {
+
+        GIDSignIn.sharedInstance().uiDelegate = self
+
         super.viewDidLoad()
     }
 
@@ -60,6 +65,10 @@ class SignIn: UIViewController {
             }
         })
     }
+
+
+
+
 
     //EMAIL SIGN IN
     @IBAction func signInTapped(_ sender: AnyObject) {
