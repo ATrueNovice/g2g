@@ -12,17 +12,19 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleSignIn
 
-class SignIn: UIViewController, GIDSignInUIDelegate {
+class SignIn: UIViewController, GIDSignInUIDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var googleSignIn: GIDSignInButton!
 
     override func viewDidLoad() {
-
-        GIDSignIn.sharedInstance().uiDelegate = self
-
         super.viewDidLoad()
+
+        self.emailField.delegate = self
+        self.passwordField.delegate = self
+        
+        setupGoogleButton()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -30,6 +32,19 @@ class SignIn: UIViewController, GIDSignInUIDelegate {
             print("NOTE: ID found in keychain")
             performSegue(withIdentifier: "goToFeed", sender: nil)
         }
+    }
+
+    fileprivate func setupGoogleButton() {
+        let googleButton = GIDSignInButton()
+        view.addSubview(googleButton)
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     @IBAction func facebookBtnTapped(_ sender: AnyObject) {
@@ -73,7 +88,7 @@ class SignIn: UIViewController, GIDSignInUIDelegate {
     //EMAIL SIGN IN
     @IBAction func signInTapped(_ sender: AnyObject) {
         if let email = emailField.text, let pwd = passwordField.text {
-            Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
+            Auth.auth().createUser(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
                     print("NOTE: Email user authenticated with Firebase")
                     if let user = user {
@@ -81,7 +96,7 @@ class SignIn: UIViewController, GIDSignInUIDelegate {
                         self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
-                    Auth.auth().createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                    Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
                             print("NOTE: Unable to authenticate with Firebase using email")
                         } else {
@@ -105,6 +120,13 @@ class SignIn: UIViewController, GIDSignInUIDelegate {
         print("NOTE: Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
+
+    @IBAction func noAccount(_ sender: Any) {
+        performSegue(withIdentifier: "goNewUser", sender: nil)
+
+
+    }
+
 
 }
 

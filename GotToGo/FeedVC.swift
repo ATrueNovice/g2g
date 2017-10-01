@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import Firebase
 import CoreLocation
+import SwiftKeychainWrapper
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -171,4 +172,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
         }
     }
+
+    @IBAction func buttonPressed(_ sender: Any) {
+
+        let keychainMessage = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        try!  Auth.auth().signOut()
+        print("NOTE: Key Forgotten \(keychainMessage)")
+        self.dismiss(animated: false, completion: nil)
+
+    }
+
 }

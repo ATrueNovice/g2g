@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextBoxes: UITextField {
+class TextBoxes: UITextField, UITextFieldDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,10 +19,18 @@ class TextBoxes: UITextField {
 
     //Modifies the place holder text
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: 10, dy: 5)
+        return bounds.insetBy(dx: 15, dy: 10)
     }
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: 10, dy: 5)
+        return bounds.insetBy(dx: 15, dy: 10)
     }
+
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
+
 }

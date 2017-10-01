@@ -33,17 +33,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
 
-        if (error == nil) {
-            let userId = user.userID
-            let idToken = user.authentication.idToken
-
-            let name = user.profile.name
-            let email = user.profile.email
-            let userImageURL = user.profile.imageURL(withDimension: 200)
-        } else {
-            print("\(error?.localizedDescription)")
+        if let err = error {
+            print("Failed To Sign In", err)
+            return
         }
-    }
+        print("Successfully Signed In With Google", user)
+
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+
+        Auth.auth().signIn(with: credentials, completion: {(user, error) in
+            if let err = error {
+                print("Failed To Create Firebase User: ", err)
+                return
+            }
+            
+            print("Logged In Successfully", user?.uid)
+            })
+
+        }
 
 
     func applicationWillResignActive(_ application: UIApplication) {
