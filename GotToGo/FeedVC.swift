@@ -128,7 +128,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             annotationView?.canShowCallout = true
-            annotationView?.image = UIImage(named: "toliet")
+            annotationView?.image = UIImage(named: "Marker")
         }
         else {
             annotationView?.annotation = annotation

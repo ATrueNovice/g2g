@@ -61,6 +61,9 @@
                                 <state key="normal" title="Google">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="googleBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V5p-3U-7Lc"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hn1-7h-V92">
                                 <rect key="frame" x="90" y="309" width="195" height="107"/>
@@ -87,7 +90,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMN-GL-CNt">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMN-GL-CNt">
                                 <rect key="frame" x="103" y="460" width="168" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -118,7 +121,6 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="uvh-TV-e6o" id="pmn-fy-PhW"/>
-                        <outlet property="googleSignIn" destination="80q-Ta-NOO" id="zbG-bU-230"/>
                         <outlet property="passwordField" destination="uOF-Vt-ecH" id="43Q-zv-7so"/>
                         <segue destination="ivx-rO-21f" kind="show" identifier="goToFeed" id="gbJ-SZ-9GD"/>
                     </connections>

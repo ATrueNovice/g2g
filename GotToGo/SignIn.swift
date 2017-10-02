@@ -12,20 +12,25 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleSignIn
 
-class SignIn: UIViewController, GIDSignInUIDelegate, UITextFieldDelegate {
+class SignIn: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UITextFieldDelegate {
+
+
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var googleSignIn: GIDSignInButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.emailField.delegate = self
         self.passwordField.delegate = self
-        
-        setupGoogleButton()
-    }
+
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signInSilently()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+
+        }
 
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
@@ -34,18 +39,28 @@ class SignIn: UIViewController, GIDSignInUIDelegate, UITextFieldDelegate {
         }
     }
 
-    fileprivate func setupGoogleButton() {
-        let googleButton = GIDSignInButton()
-        view.addSubview(googleButton)
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let authentication = user.authentication {
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
 
+            Auth.auth().signIn(with: credential, completion: { (user, error) -> Void in
+                if error != nil {
+                    print("Problem at signing in with google with error : \(String(describing: error))")
+                } else if error == nil {
+                    print("user successfully signed in through GOOGLE! uid:\(Auth.auth().currentUser!.uid)")
+                    print("signed in")
+                    self.firebaseAuth(credential)
+
+                }
+            })
+        }
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        @IBAction func googleBtnTapped(_ sender: Any) {
+            GIDSignIn.sharedInstance().signIn()
+
     }
+    
 
     @IBAction func facebookBtnTapped(_ sender: AnyObject) {
 
@@ -63,6 +78,11 @@ class SignIn: UIViewController, GIDSignInUIDelegate, UITextFieldDelegate {
             }
         }
 
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 
