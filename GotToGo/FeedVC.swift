@@ -20,10 +20,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
     let locationManager = CLLocationManager()
     var centerMapped = false
-    var geoFire: GeoFire!
-    var geoFireRef: DatabaseReference!
-
-
 
 
     var posts = [Post]()
@@ -31,15 +27,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Set up Map
         mapView.delegate = self
         mapView.userTrackingMode = MKUserTrackingMode.follow
 
-        geoFireRef = Database.database().reference()
-        geoFire = GeoFire(firebaseRef: geoFireRef)
-
+        // Setup TableView
         tableView.delegate = self
         tableView.dataSource = self
 
+        //Pulls TableData for UITableView
         DataService.ds.REF_VENUE.observe(.value, with: { (snapshot) in
 
             self.posts = [] // THIS IS THE NEW LINE
@@ -52,13 +48,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                         self.posts.append(post)
                     }
 
+                    //Populates Map with annotations.
                 if let locationDict = snap.value as? Dictionary<String, AnyObject> {
 
                     let lat = locationDict["LATITUDE"] as! CLLocationDegrees
                     let long = locationDict["LONGITUDE"] as! CLLocationDegrees
                     let title = locationDict["NAME"] as! String
                     let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                    _ = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.10, longitudeDelta: 0.10))
+                    _ = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.20, longitudeDelta: 0.20))
 
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2DMake(lat, long)
@@ -99,7 +96,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     }
 
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000, 2000)
 
         mapView.setRegion(coordinateRegion, animated: true)
     }
@@ -112,6 +109,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             }
         }
     }
+
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
