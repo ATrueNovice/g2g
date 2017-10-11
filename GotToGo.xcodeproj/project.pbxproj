@@ -15,6 +15,7 @@
 		6518D4161F5C84E200B7591D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4151F5C84E200B7591D /* FeedVC.swift */; };
 		6518D4181F5C883B00B7591D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4171F5C883B00B7591D /* PostCell.swift */; };
 		6518D41A1F5DBEB700B7591D /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4191F5DBEB700B7591D /* PreviewVC.swift */; };
+		652C306B1F84690D004A2A9D /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652C306A1F84690D004A2A9D /* ForgotPassword.swift */; };
 		65A1466D1F8141A900286976 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A1466C1F8141A900286976 /* NewUser.swift */; };
 		65B2B9181F75885600A6BD0A /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B90F1F75885600A6BD0A /* GeoFire.m */; };
 		65B2B9191F75885600A6BD0A /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B9111F75885600A6BD0A /* GFBase32Utils.m */; };
@@ -38,6 +39,7 @@
 		6518D4151F5C84E200B7591D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		6518D4171F5C883B00B7591D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6518D4191F5DBEB700B7591D /* PreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
+		652C306A1F84690D004A2A9D /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		65A1466B1F7EA9A400286976 /* GotToGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GotToGo.entitlements; sourceTree = "<group>"; };
 		65A1466C1F8141A900286976 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		65B2B9081F75885600A6BD0A /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				65A1466C1F8141A900286976 /* NewUser.swift */,
 				6518D4151F5C84E200B7591D /* FeedVC.swift */,
 				6518D4191F5DBEB700B7591D /* PreviewVC.swift */,
+				652C306A1F84690D004A2A9D /* ForgotPassword.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				6518D4101F5C109A00B7591D /* TextBoxes.swift in Sources */,
 				6518D4161F5C84E200B7591D /* FeedVC.swift in Sources */,
 				6518D40C1F5C0EC500B7591D /* DataService.swift in Sources */,
+				652C306B1F84690D004A2A9D /* ForgotPassword.swift in Sources */,
 				65B2B91B1F75885600A6BD0A /* GFGeoHashQuery.m in Sources */,
 				65B2B9191F75885600A6BD0A /* GFBase32Utils.m in Sources */,
 				65DC001F1F5B647900783254 /* SignIn.swift in Sources */,

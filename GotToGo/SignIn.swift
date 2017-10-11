@@ -58,7 +58,6 @@ class SignIn: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UITextFi
 
         @IBAction func googleBtnTapped(_ sender: Any) {
             GIDSignIn.sharedInstance().signIn()
-
     }
     
 
@@ -118,6 +117,11 @@ class SignIn: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UITextFi
                 } else {
                     Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
+                            // Error - Unidentified Email
+                            let alert = UIAlertController(title: "Hmmm...", message: "Invaild User Name or Password", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                            }))
+                            self.present(alert, animated: true, completion: nil)
                             print("NOTE: Unable to authenticate with Firebase using email")
                         } else {
                             print("NOTE: Successfully authenticated with Firebase")
