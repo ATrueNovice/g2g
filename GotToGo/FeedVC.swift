@@ -20,8 +20,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
     let locationManager = CLLocationManager()
     var centerMapped = false
-    var viaSegue = MKAnnotationView()
-    var dataDict:[String:String] = [:]
+ 
 
 
 //Array With data from FireBase
@@ -107,11 +106,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
-//MapView Segue
-
-//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        performSegue(withIdentifier: "previewSegue", sender: nil)
-//    }
 
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         if let loc = userLocation.location {
@@ -126,10 +120,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
         //User Annotation
-        if annotation.isKind(of: MKUserLocation.self) {
-            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
-            annotationView.image = UIImage(named: "icon")
-            return annotationView
+        if (annotation is MKUserLocation) {
+            return nil
         }
 
         //Venue Annotation
@@ -173,12 +165,21 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         performSegue(withIdentifier: "previewSegue", sender: post)
     }
 
+    //MapView Segue
+    
+//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        performSegue(withIdentifier: "previewSegue", sender: posts[indexPath.])
+//    }
+
+// Sender with Location Name and Address
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let destination = segue.destination as? PreviewVC {
-            if let update = sender as? Post, let update2 = sender as? Post {
+            if let update = sender as? Post, let update2 = sender as? Post, let update3 = sender as? Post, let update4 = sender as? Post {
                 destination.locationData = update
                 destination.addressData = update2
+                destination.latitude = update3
+                destination.longitude = update4
             }
         }
     }

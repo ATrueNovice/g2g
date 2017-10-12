@@ -69,11 +69,11 @@ class Post {
             self._handicap = handicap
         }
 
-        if let latitude = postData["LATITUDE"] as? Double {
+        if let latitude = postData["LATITUDE"] as? CLLocationDegrees {
             self._latitude = latitude
         }
 
-        if let longitude = postData["LONGITUDE"] as? Double {
+        if let longitude = postData["LONGITUDE"] as? CLLocationDegrees {
             self._longitude = longitude
         }
 

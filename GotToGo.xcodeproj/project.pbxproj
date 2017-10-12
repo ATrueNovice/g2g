@@ -114,8 +114,8 @@
 				65DC001E1F5B647900783254 /* SignIn.swift */,
 				65A1466C1F8141A900286976 /* NewUser.swift */,
 				6518D4151F5C84E200B7591D /* FeedVC.swift */,
-				6518D4191F5DBEB700B7591D /* PreviewVC.swift */,
 				652C306A1F84690D004A2A9D /* ForgotPassword.swift */,
+				6518D4191F5DBEB700B7591D /* PreviewVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
