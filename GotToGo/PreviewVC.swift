@@ -14,7 +14,12 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var previewMap: MKMapView!
 
-    var post: Post!
+    public var _locationData: Post!
+    public var _addressLbl: Post!
+    public var _latitude: Post!
+    public var _longitude: Post!
+
+
 
     let locationManager = CLLocationManager()
     let annotation = MKPointAnnotation()
