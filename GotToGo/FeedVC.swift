@@ -177,13 +177,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let destination = segue.destination as? PreviewVC {
-            if let update = sender as? Post, let update2 = sender as? Post, let update3 = sender as? Post, let update4 = sender as? Post {
-                destination.locationData = update
-                destination.addressData = update2
-                destination.latitude = update3
-                destination.longitude = update4
+            if let post = sender as? Post {
+                destination.post = post
             }
-        }
     }
 
 //SignOut

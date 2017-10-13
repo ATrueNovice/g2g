@@ -14,10 +14,7 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var previewMap: MKMapView!
 
-    public var _locationData: Post!
-    public var _addressLbl: Post!
-    public var _latitude: Post!
-    public var _longitude: Post!
+    var post: Post!
 
     let locationManager = CLLocationManager()
     let annotation = MKPointAnnotation()
@@ -70,8 +67,6 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         //Set Labels
         locationLbl.text =  locationData.locationName.capitalized
         addressLbl.text = addressData.address.capitalized
-
-
 
     }
 
