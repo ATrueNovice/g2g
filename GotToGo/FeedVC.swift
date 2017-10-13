@@ -120,8 +120,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
         //User Annotation
-        if (annotation is MKUserLocation) {
-            return nil
+        if annotation.isKind(of: MKUserLocation.self) {
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
+            annotationView.image = UIImage(named: "icon")
+            return annotationView
         }
 
         //Venue Annotation

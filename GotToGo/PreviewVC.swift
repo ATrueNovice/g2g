@@ -14,15 +14,14 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var previewMap: MKMapView!
 
-    private var _locationData: Post!
-    private var _addressLbl: Post!
-    private var _latitude: Post!
-    private var _longitude: Post!
+    public var _locationData: Post!
+    public var _addressLbl: Post!
+    public var _latitude: Post!
+    public var _longitude: Post!
 
     let locationManager = CLLocationManager()
     let annotation = MKPointAnnotation()
     var centerMapped = false
-
 
 //Get & Set
     var locationData: Post {
@@ -102,10 +101,7 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
 
     //Annotation Override.
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-
-        let lat: CLLocationDegrees = (latitude) as! CLLocation
-        let long: CLLocationDegrees = (longitude)as! CLLocation
-
+        
         //User Annotation
         if (annotation is MKUserLocation) {
             return nil
@@ -128,6 +124,19 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
     }
     @IBAction func openMap(_ sender: Any) {
 
-        
+
+        let regionDistance: CLLocationDistance = 1000
+        let coordinate =  CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+
+        let regionSpan = MKCoordinateRegionMake(coordinate, regionDistance)
+
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)]
+
+        let placeMark = MKPlacemark(coordinate: coordinate)
+        let mapItem = MKMapItem(placemark: placeMark)
+
+        mapItem.name = locationData.locationName
+        mapItem.openInMaps(launchOptions: options)
+
     }
 }
