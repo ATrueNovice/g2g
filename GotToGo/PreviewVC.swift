@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
 
@@ -32,6 +33,17 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         pAddressLbl.text =  locationData.address.capitalized
         print("here: \(locationData.address.capitalized)")
 
+        let lat = locationData.latitude
+        let long = locationData.longitude
+        let title = locationData.locationName
+        let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(lat, long)
+        annotation.title = title.capitalized
+        self.previewMap.addAnnotation(annotation)
+        self.previewMap.setRegion(region, animated: true)
     }
 
     func initData(selectedPost: Post) {
@@ -73,9 +85,10 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            //        annotation.coordinate = CLLocationCoordinate2D(latitude: locationData.latitude, longitude: locationData.longitude)
+           // annotation.coordinate = CLLocationCoordinate2DMake(latitude: locationData._latitude, longitude: locationData._longitude)
             annotationView?.canShowCallout = true
             annotationView?.image = UIImage(named: "Marker")
+
         }
         else {
             annotationView?.annotation = annotation
