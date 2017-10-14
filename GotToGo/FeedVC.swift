@@ -174,17 +174,17 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 //    }
 
 // Sender with Location Name and Address
+    // Sender with Location Name and Address
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if let destination = segue.destination as? PreviewVC {
-            if let update = sender as? Post, let update2 = sender as? Post, let update3 = sender as? Post, let update4 = sender as? Post {
-                destination.locationData = update
-                destination.addressData = update2
-                destination.latitude = update3
-                destination.longitude = update4
+        if segue.identifier == "previewSegue" {
+            if let destination = segue.destination as? PreviewVC {
+                if let update = sender as? Post {
+                    destination.initData(selectedPost: update)
+                }
             }
         }
     }
+
 
 //SignOut
     @IBAction func buttonPressed(_ sender: Any) {
