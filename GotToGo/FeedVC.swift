@@ -20,10 +20,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
     let locationManager = CLLocationManager()
     var centerMapped = false
- 
 
 
-//Array With data from FireBase
+
+    //Array With data from FireBase
     var posts = [Post]()
 
     override func viewDidLoad() {
@@ -99,7 +99,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
 
 
-//MapView Focus
+    //MapView Focus
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000, 2000)
 
@@ -116,7 +116,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         }
     }
 
-//Annotation Override.
+    //Annotation Override.
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
         //User Annotation
@@ -141,7 +141,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         return annotationView
     }
 
-//TableView Configure
+    //TableView Configure
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -151,9 +151,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? PostCell {
-        let cellData = posts[indexPath.row]
+            let cellData = posts[indexPath.row]
 
-        cell.configureCell(post: cellData)
+            cell.configureCell(post: cellData)
             return cell
         } else {
             return PostCell()
@@ -161,19 +161,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     }
 
 
-//TableView Segue
+    //TableView Segue
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.row]
         performSegue(withIdentifier: "previewSegue", sender: post)
     }
 
     //MapView Segue
-    
-//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        performSegue(withIdentifier: "previewSegue", sender: posts[indexPath.])
-//    }
 
-// Sender with Location Name and Address
+    //    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    //        performSegue(withIdentifier: "previewSegue", sender: posts[indexPath.])
+    //    }
+
     // Sender with Location Name and Address
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {
@@ -185,8 +184,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         }
     }
 
-
-//SignOut
+    //SignOut
     @IBAction func buttonPressed(_ sender: Any) {
 
         let keychainMessage = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
@@ -197,3 +195,4 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     }
 
 }
+

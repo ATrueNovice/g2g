@@ -10,8 +10,8 @@ import UIKit
 
 class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
 
-    @IBOutlet weak var locationLbl: UILabel!
-    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var pLocationLbl: UILabel!
+    @IBOutlet weak var pAddressLbl: UILabel!
     @IBOutlet weak var previewMap: MKMapView!
 
     private var locationData: Post!
@@ -24,12 +24,12 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         super.viewDidLoad()
 
         // Set up Map
-         previewMap.delegate = self
-         previewMap.userTrackingMode = MKUserTrackingMode.follow
+        previewMap.delegate = self
+        previewMap.userTrackingMode = MKUserTrackingMode.follow
 
         //Set Labels
-        locationLbl.text =  locationData.locationName.capitalized
-        addressLbl.text =  locationData.address.capitalized
+        pLocationLbl.text =  locationData.locationName.capitalized
+        pAddressLbl.text =  locationData.address.capitalized
         print("here: \(locationData.address.capitalized)")
 
     }
@@ -73,7 +73,7 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            annotation.coordinate = CLLocationCoordinate2DMake(latitude: locationData.latitude, longitude: locationData.longitude)
+            //        annotation.coordinate = CLLocationCoordinate2D(latitude: locationData.latitude, longitude: locationData.longitude)
             annotationView?.canShowCallout = true
             annotationView?.image = UIImage(named: "Marker")
         }
@@ -91,13 +91,13 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
 
         let regionSpan = MKCoordinateRegionMake(coordinate, regionDistance)
 
-        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)]
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
 
         let placeMark = MKPlacemark(coordinate: coordinate)
         let mapItem = MKMapItem(placemark: placeMark)
 
         mapItem.name = locationData.locationName
-//        mapItem.openInMaps(launchOptions: options)
+        mapItem.openInMaps(launchOptions: options)
 
     }
 }

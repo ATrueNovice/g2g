@@ -482,7 +482,7 @@
         <!--PreviewVC-->
         <scene sceneID="bx7-46-JDG">
             <objects>
-                <viewController id="yOE-ox-IjG" customClass="PreviewVC" sceneMemberID="viewController">
+                <viewController id="yOE-ox-IjG" customClass="PreviewVC" customModule="GotToGo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OUe-bz-4vk"/>
                         <viewControllerLayoutGuide type="bottom" id="h9a-Rj-j7O"/>
@@ -491,7 +491,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDu-YO-1MK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venue Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDu-YO-1MK">
                                 <rect key="frame" x="0.0" y="412" width="122" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -503,10 +503,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search Again"/>
                                 <connections>
-                                    <action selector="backPressed:" destination="yOE-ox-IjG" eventType="touchUpInside" id="Sfo-jG-gkh"/>
+                                    <action selector="backPressed:" destination="yOE-ox-IjG" eventType="touchUpInside" id="8kW-hm-khM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-WF-3iR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-WF-3iR">
                                 <rect key="frame" x="245" y="418" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -522,16 +522,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="openMap:" destination="yOE-ox-IjG" eventType="touchUpInside" id="cM5-AG-2RK"/>
+                                    <action selector="openMap:" destination="yOE-ox-IjG" eventType="touchUpInside" id="4pN-du-9Rw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="addressLbl" destination="A6l-WF-3iR" id="1gi-Zb-1yQ"/>
-                        <outlet property="locationLbl" destination="YDu-YO-1MK" id="Y7T-aY-Sqn"/>
-                        <outlet property="previewMap" destination="65i-ML-Lhq" id="O8M-eW-fco"/>
+                        <outlet property="pAddressLbl" destination="A6l-WF-3iR" id="6qB-a5-yT0"/>
+                        <outlet property="pLocationLbl" destination="YDu-YO-1MK" id="qIw-OR-opQ"/>
+                        <outlet property="previewMap" destination="65i-ML-Lhq" id="0by-2z-3yp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-Tg-ub0" userLabel="First Responder" sceneMemberID="firstResponder"/>
