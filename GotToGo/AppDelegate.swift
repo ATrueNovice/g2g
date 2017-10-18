@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import GoogleSignIn
+import GoogleMobileAds
 
 @UIApplicationMain
 
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
 
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-8509730756658652/8064528485")
 
         return true
     }

@@ -8,14 +8,16 @@
 
 import UIKit
 import CoreLocation
+import GoogleMobileAds
 
-class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
+class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GADInterstitialDelegate  {
 
     @IBOutlet weak var pLocationLbl: UILabel!
     @IBOutlet weak var pAddressLbl: UILabel!
     @IBOutlet weak var previewMap: MKMapView!
 
     private var locationData: Post!
+    var interstitial: GADInterstitial!
 
     let locationManager = CLLocationManager()
     let annotation = MKPointAnnotation()
@@ -31,8 +33,17 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         //Set Labels
         pLocationLbl.text =  locationData.locationName.capitalized
         pAddressLbl.text =  locationData.address.capitalized
-        print("here: \(locationData.address.capitalized)")
+        print("Location Selected: \(locationData.address.capitalized)")
 
+        //Google Ad Mob
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-8509730756658652/4125283471")
+        let request = GADRequest()
+        interstitial.load(request)
+        interstitial.delegate = self
+
+
+
+        //Map Data
         let lat = locationData.latitude
         let long = locationData.longitude
         let title = locationData.locationName
@@ -46,10 +57,12 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         self.previewMap.setRegion(region, animated: true)
     }
 
+    //Initialize Passed Data
     func initData(selectedPost: Post) {
         locationData = selectedPost
     }
 
+    //Dismiss View
     @IBAction func backPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
 
@@ -85,7 +98,6 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-           // annotation.coordinate = CLLocationCoordinate2DMake(latitude: locationData._latitude, longitude: locationData._longitude)
             annotationView?.canShowCallout = true
             annotationView?.image = UIImage(named: "Marker")
 
@@ -96,6 +108,20 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
 
         return annotationView
     }
+
+    //AdMob
+    func createAndLoadInterstitial() -> GADInterstitial {
+        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-8509730756658652/4125283471")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
+    }
+
+    //Open In Native Map
     @IBAction func openMap(_ sender: Any) {
 
 
@@ -112,6 +138,11 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         mapItem.name = locationData.locationName
         mapItem.openInMaps(launchOptions: options)
 
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
     }
 }
 

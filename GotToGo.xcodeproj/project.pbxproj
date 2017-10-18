@@ -10,12 +10,14 @@
 		6518D40C1F5C0EC500B7591D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D40B1F5C0EC500B7591D /* DataService.swift */; };
 		6518D40E1F5C104D00B7591D /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D40D1F5C104D00B7591D /* constants.swift */; };
 		6518D4101F5C109A00B7591D /* TextBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D40F1F5C109A00B7591D /* TextBoxes.swift */; };
-		6518D4121F5C118700B7591D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6518D4111F5C118700B7591D /* GoogleService-Info.plist */; };
 		6518D4141F5C61B000B7591D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4131F5C61B000B7591D /* Post.swift */; };
 		6518D4161F5C84E200B7591D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4151F5C84E200B7591D /* FeedVC.swift */; };
 		6518D4181F5C883B00B7591D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4171F5C883B00B7591D /* PostCell.swift */; };
 		6518D41A1F5DBEB700B7591D /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4191F5DBEB700B7591D /* PreviewVC.swift */; };
 		652C306B1F84690D004A2A9D /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652C306A1F84690D004A2A9D /* ForgotPassword.swift */; };
+		653A4D6A1F970C580017A9AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 653A4D691F970C580017A9AC /* GoogleService-Info.plist */; };
+		653A4D6C1F9712730017A9AC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653A4D6B1F9712730017A9AC /* StoreKit.framework */; };
+		653A4D751F971E490017A9AC /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653A4D741F971E490017A9AC /* GoogleMobileAds.framework */; };
 		65A1466D1F8141A900286976 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A1466C1F8141A900286976 /* NewUser.swift */; };
 		65B2B9181F75885600A6BD0A /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B90F1F75885600A6BD0A /* GeoFire.m */; };
 		65B2B9191F75885600A6BD0A /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2B9111F75885600A6BD0A /* GFBase32Utils.m */; };
@@ -34,12 +36,14 @@
 		6518D40B1F5C0EC500B7591D /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6518D40D1F5C104D00B7591D /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		6518D40F1F5C109A00B7591D /* TextBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBoxes.swift; sourceTree = "<group>"; };
-		6518D4111F5C118700B7591D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6518D4131F5C61B000B7591D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6518D4151F5C84E200B7591D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		6518D4171F5C883B00B7591D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6518D4191F5DBEB700B7591D /* PreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
 		652C306A1F84690D004A2A9D /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		653A4D691F970C580017A9AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		653A4D6B1F9712730017A9AC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		653A4D741F971E490017A9AC /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		65A1466B1F7EA9A400286976 /* GotToGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GotToGo.entitlements; sourceTree = "<group>"; };
 		65A1466C1F8141A900286976 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		65B2B9081F75885600A6BD0A /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
@@ -75,7 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653A4D751F971E490017A9AC /* GoogleMobileAds.framework in Frameworks */,
 				D6D55572C03788B41E4C9802 /* Pods_GotToGo.framework in Frameworks */,
+				653A4D6C1F9712730017A9AC /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +202,7 @@
 		65DC001B1F5B647900783254 /* GotToGo */ = {
 			isa = PBXGroup;
 			children = (
+				653A4D741F971E490017A9AC /* GoogleMobileAds.framework */,
 				65A1466B1F7EA9A400286976 /* GotToGo.entitlements */,
 				65B2B9061F75885600A6BD0A /* GeoFire */,
 				6518D4081F5C0B0800B7591D /* Constants */,
@@ -208,8 +215,8 @@
 				65DC00231F5B647900783254 /* Assets.xcassets */,
 				65DC00251F5B647900783254 /* LaunchScreen.storyboard */,
 				65DC00281F5B647900783254 /* Info.plist */,
-				6518D4111F5C118700B7591D /* GoogleService-Info.plist */,
 				65B2B91D1F770A9200A6BD0A /* GotToGo-Bridging-Header.h */,
+				653A4D691F970C580017A9AC /* GoogleService-Info.plist */,
 			);
 			path = GotToGo;
 			sourceTree = "<group>";
@@ -217,6 +224,7 @@
 		A6F147E9AC07C1EE565AFEF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				653A4D6B1F9712730017A9AC /* StoreKit.framework */,
 				B25E36225457FEC829C5D5CD /* Pods_GotToGo.framework */,
 			);
 			name = Frameworks;
@@ -260,6 +268,9 @@
 						DevelopmentTeam = AK4RWB2TUN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -291,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65DC00271F5B647900783254 /* LaunchScreen.storyboard in Resources */,
-				6518D4121F5C118700B7591D /* GoogleService-Info.plist in Resources */,
+				653A4D6A1F970C580017A9AC /* GoogleService-Info.plist in Resources */,
 				65DC00241F5B647900783254 /* Assets.xcassets in Resources */,
 				65DC00221F5B647900783254 /* Main.storyboard in Resources */,
 			);
@@ -443,8 +454,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -493,8 +506,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -518,9 +533,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GotToGo/GotToGo.entitlements;
 				DEVELOPMENT_TEAM = AK4RWB2TUN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GotToGo",
+				);
 				INFOPLIST_FILE = GotToGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.default.GotToGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HSI.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -534,9 +553,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GotToGo/GotToGo.entitlements;
 				DEVELOPMENT_TEAM = AK4RWB2TUN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GotToGo",
+				);
 				INFOPLIST_FILE = GotToGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.default.GotToGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HSI.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

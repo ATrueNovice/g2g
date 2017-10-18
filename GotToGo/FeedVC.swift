@@ -11,12 +11,14 @@ import MapKit
 import Firebase
 import CoreLocation
 import SwiftKeychainWrapper
+import GoogleMobileAds
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
-
+    @IBOutlet weak var bannerView: GADBannerView!
+    
 
     let locationManager = CLLocationManager()
     var centerMapped = false
@@ -36,6 +38,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         // Setup TableView
         tableView.delegate = self
         tableView.dataSource = self
+
+        //Google Ad Mob
+        bannerView.adUnitID = "ca-app-pub-8509730756658652/8064528485"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
 
         //Pulls TableData for UITableView
         DataService.ds.REF_VENUE.observe(.value, with: { (snapshot) in
@@ -142,7 +150,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     }
 
     //TableView Configure
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -168,11 +175,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     }
 
     //MapView Segue
-
     //    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
     //        performSegue(withIdentifier: "previewSegue", sender: posts[indexPath.])
     //    }
-
     // Sender with Location Name and Address
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {

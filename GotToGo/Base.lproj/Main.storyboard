@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -236,9 +236,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJq-pA-5WU">
                                                 <rect key="frame" x="8" y="19" width="65" height="30"/>
                                                 <state key="normal" title="More Info"/>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="ivx-rO-21f" eventType="touchUpInside" id="f4r-w7-2SJ"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -276,10 +273,15 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bh0-Lv-FjX" customClass="GADBannerView">
+                                        <rect key="frame" x="0.0" y="594" width="375" height="73"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="weC-Rs-GCf" firstAttribute="leading" secondItem="dvx-mH-47N" secondAttribute="leading" id="2Rg-w9-C8v"/>
+                                    <constraint firstAttribute="trailing" secondItem="bh0-Lv-FjX" secondAttribute="trailing" id="5pf-z9-cjI"/>
                                     <constraint firstItem="weC-Rs-GCf" firstAttribute="top" secondItem="dvx-mH-47N" secondAttribute="top" id="9jA-bc-for"/>
                                     <constraint firstItem="yv2-fY-TDP" firstAttribute="top" secondItem="J1Q-yC-46C" secondAttribute="bottom" constant="8" id="Dw9-x0-fYx"/>
                                     <constraint firstItem="J1Q-yC-46C" firstAttribute="top" secondItem="weC-Rs-GCf" secondAttribute="bottom" constant="-6" id="EVu-2U-J3l"/>
@@ -287,9 +289,12 @@
                                     <constraint firstItem="QAL-1I-eRF" firstAttribute="leading" secondItem="dvx-mH-47N" secondAttribute="leading" id="ISU-6C-84A"/>
                                     <constraint firstAttribute="trailing" secondItem="weC-Rs-GCf" secondAttribute="trailing" id="KIK-Ds-Ald"/>
                                     <constraint firstItem="QAL-1I-eRF" firstAttribute="top" secondItem="yv2-fY-TDP" secondAttribute="bottom" constant="10.5" id="ROH-FW-NrS"/>
+                                    <constraint firstItem="bh0-Lv-FjX" firstAttribute="top" secondItem="QAL-1I-eRF" secondAttribute="bottom" id="Ydf-22-Uox"/>
                                     <constraint firstItem="J1Q-yC-46C" firstAttribute="leading" secondItem="dvx-mH-47N" secondAttribute="leading" id="hIz-Xd-V0j"/>
                                     <constraint firstAttribute="trailing" secondItem="J1Q-yC-46C" secondAttribute="trailing" id="j8n-dn-lrZ"/>
+                                    <constraint firstItem="bh0-Lv-FjX" firstAttribute="leading" secondItem="dvx-mH-47N" secondAttribute="leading" id="l0A-FY-Dyq"/>
                                     <constraint firstItem="yv2-fY-TDP" firstAttribute="leading" secondItem="dvx-mH-47N" secondAttribute="leading" constant="2" id="naG-Zo-RpF"/>
+                                    <constraint firstAttribute="bottom" secondItem="bh0-Lv-FjX" secondAttribute="bottom" id="pZB-6u-8Ln"/>
                                     <constraint firstAttribute="trailing" secondItem="yv2-fY-TDP" secondAttribute="trailing" constant="8" id="sDe-sn-lOd"/>
                                     <constraint firstItem="QAL-1I-eRF" firstAttribute="top" secondItem="J1Q-yC-46C" secondAttribute="bottom" constant="31" id="x6Q-ut-VnI"/>
                                 </constraints>
@@ -304,6 +309,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="bh0-Lv-FjX" id="DzV-Jy-eW2"/>
                         <outlet property="mapView" destination="J1Q-yC-46C" id="Ysj-eG-8GA"/>
                         <outlet property="tableView" destination="QAL-1I-eRF" id="Ipr-gA-dQS"/>
                         <segue destination="yOE-ox-IjG" kind="show" identifier="previewSegue" id="FfC-Tl-fTP"/>
@@ -560,6 +566,6 @@
         <image name="home" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3ZG-n7-CbZ"/>
+        <segue reference="gbJ-SZ-9GD"/>
     </inferredMetricsTieBreakers>
 </document>
