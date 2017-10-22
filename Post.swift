@@ -12,13 +12,13 @@ import Firebase
 
 class Post {
 
-    private var _locationName: String!
-    private var _address: String!
-    private var _handicap: String!
-    private var _postKey: String!
-    private var _latitude: Double!
-    private var _longitude: Double!
-    private var _postRef: DatabaseReference!
+    public var _locationName: String!
+    public var _address: String!
+    public var _handicap: String!
+    public var _postKey: String!
+    public var _latitude: CLLocationDegrees!
+    public var _longitude: CLLocationDegrees!
+    public var _postRef: DatabaseReference!
 
 
     var locationName: String {
@@ -37,11 +37,11 @@ class Post {
         return _postKey
     }
 
-    var latitude: Double {
+    var latitude: CLLocationDegrees {
         return _latitude
     }
 
-    var longitude: Double {
+    var longitude: CLLocationDegrees {
         return _longitude
     }
 
@@ -69,11 +69,11 @@ class Post {
             self._handicap = handicap
         }
 
-        if let latitude = postData["LATITUDE"] as? Double {
+        if let latitude = postData["LATITUDE"] as? CLLocationDegrees {
             self._latitude = latitude
         }
 
-        if let longitude = postData["LONGITUDE"] as? Double {
+        if let longitude = postData["LONGITUDE"] as? CLLocationDegrees {
             self._longitude = longitude
         }
 
@@ -81,3 +81,4 @@ class Post {
 
     }
 }
+

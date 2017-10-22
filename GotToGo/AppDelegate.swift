@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import GoogleSignIn
-
+import GoogleMobileAds
 
 @UIApplicationMain
 
@@ -28,29 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-8509730756658652/8064528485")
+
         return true
     }
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-
-        if let err = error {
-            print("Failed To Sign In", err)
-            return
-        }
-        print("Successfully Signed In With Google", user)
-
-        guard let idToken = user.authentication.idToken else {return}
-        guard let accessToken = user.authentication.accessToken else {return}
-        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-
-        Auth.auth().signIn(with: credentials, completion: {(user, error) in
-            if let err = error {
-                print("Failed To Create Firebase User: ", err)
-                return
-            }
-            
-            print("Logged In Successfully", user?.uid)
-            })
+      print("Signing In With Google")
 
         }
 

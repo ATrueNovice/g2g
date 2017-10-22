@@ -49,7 +49,7 @@ class newUser: UIViewController, UITextFieldDelegate {
         if let email = emailField.text, let pwd = passwordField.text {
             Auth.auth().createUser(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
-                    print("NOTE: Email user authenticated with Firebase")
+                    print("NOTE: Email User Created")
                     if let user = user {
                         let userData = ["provider": user.providerID]
                         self.completeSignIn(id: user.uid, userData: userData)
@@ -57,7 +57,13 @@ class newUser: UIViewController, UITextFieldDelegate {
                 } else {
                     Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
+                            // Error - Unidentified Email
+                            let alert = UIAlertController(title: "This Email May Have Been Used Before.", message: "Could You Please Verify That This Is the Correct Email", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                            }))
+                            self.present(alert, animated: true, completion: nil)
                             print("NOTE: Unable to authenticate with Firebase using email")
+
                         } else {
                             print("NOTE: Successfully authenticated with Firebase")
                             if let user = user {

@@ -30,3 +30,4 @@ class PostCell: UITableViewCell {
     }
 
 }
+
