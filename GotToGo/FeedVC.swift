@@ -31,7 +31,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     //Array With data from FireBase
     var posts = [Post]()
     var postData = [String:AnyObject]()
-    var finalDict = [[String:AnyObject]]()
+    var finalDict = [[String: AnyObject]]()
     var userLatt = CLLocationDegrees()
     var userLonn = CLLocationDegrees()
 
@@ -144,7 +144,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         return annotationView
     }
 
-    //iosGeek
     func calculateDistance(userlat: CLLocationDegrees, userLon:CLLocationDegrees, venueLat:CLLocationDegrees, venueLon:CLLocationDegrees) -> String {
         let userLocation:CLLocation = CLLocation(latitude: userlat, longitude: userLon)
         let priceLocation:CLLocation = CLLocation(latitude: venueLat, longitude: venueLon)
@@ -184,7 +183,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         DataService.ds.REF_VENUE.observe(.value, with: { (snapshot) in
 
             self.posts = [] // THIS IS THE NEW LINE
-            self.finalDict = []
 
             if snapshot.exists(){
                 if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
@@ -221,7 +219,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
     //TableView Configure
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return finalDict.count
+        return posts.count
     }
 
 
@@ -229,7 +227,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? PostCell {
             let cellData = posts[indexPath.row]
-
             cell.configureCell(post: cellData)
             return cell
         } else {
@@ -240,7 +237,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
     //TableView Segue
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post = finalDict[indexPath.row]
+        let post = posts[indexPath.row]
         performSegue(withIdentifier: "previewSegue", sender: post)
     }
 

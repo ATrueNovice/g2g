@@ -66,6 +66,12 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
     @IBAction func backPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
 
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+
     }
 
     //MapView Focus
@@ -121,6 +127,23 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         interstitial = createAndLoadInterstitial()
     }
 
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        print("Ad presented")
+    }
+
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        print("interstitialDidReceiveAd")
+    }
+
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        print("interstitialWillLeaveApplication")
+    }
+
+    //Admob Errors
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
     //Open In Native Map
     @IBAction func openMap(_ sender: Any) {
 
@@ -138,11 +161,7 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         mapItem.name = locationData.locationName
         mapItem.openInMaps(launchOptions: options)
 
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+
     }
 }
 
