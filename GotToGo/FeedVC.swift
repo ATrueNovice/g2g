@@ -129,6 +129,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             annotationView?.canShowCallout = true
             annotationView?.image = UIImage(named: "Marker")
+
+            let subtitleView = UILabel()
+            subtitleView.font = subtitleView.font.withSize(12)
+            subtitleView.numberOfLines = 2
+            subtitleView.text = annotation.subtitle!
+            annotationView?.detailCalloutAccessoryView = subtitleView
+
         }
         else {
             annotationView?.annotation = annotation
@@ -156,12 +163,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             let lat = key["LATITUDE"] as! CLLocationDegrees
             let long = key["LONGITUDE"] as! CLLocationDegrees
             let title = key["NAME"] as! String
+            let subtitle = key["HANDICAP"]
             let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
             _ = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.75, longitudeDelta: 0.75))
 
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2DMake(lat, long)
             annotation.title = title.capitalized
+            annotation.subtitle = subtitle?.capitalized
             self.mapView.addAnnotation(annotation)
         }
 
@@ -177,7 +186,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             self.posts = [] // THIS IS THE NEW LINE
             self.finalDict = []
 
-            //iosGeek
             if snapshot.exists(){
                 if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                     for snap in snapshot {
@@ -194,6 +202,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                         let aa : Int = Int(distance)!
                         if (aa <= 10){
                             self.finalDict.append(self.postData) // here data is passed in a dict for map annotations with matching results
+
+                            print(self.finalDict)
                         }
                         else{
                         }
@@ -218,7 +228,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? PostCell {
-            let cellData = finalDict[indexPath.row]
+            let cellData = posts[indexPath.row]
 
             cell.configureCell(post: cellData)
             return cell
