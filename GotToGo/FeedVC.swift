@@ -201,7 +201,30 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                         if (aa <= 10){
                             self.finalDict.append(self.postData) // here data is passed in a dict for map annotations with matching results
 
-                            print(self.finalDict)
+                            //Change To Pull Dictionary out of Final Dict Array
+                            if let locationArray = self.finalDict as? [Dictionary<String, Any>] {
+                                for obj in locationArray {
+                                    if let name = obj["NAME"] as? String {
+                                        print(name)
+                                    }
+                                    if let address = obj["ADDRESS"] as? String {
+                                        print(address)
+                                    }
+
+                                    if let handicap = obj["HANDICAP"] as? String {
+                                        print(handicap)
+                                    }
+
+                                    if let latitude = obj["LATITUDE"] as? Double {
+                                        print(latitude)
+                                    }
+
+                                    if let longitude = obj["LONGITUDE"] as? Double {
+                                        print(longitude)
+                                    }
+                                }
+                                self.posts.append(locationArray)
+                            }
                         }
                         else{
                         }
@@ -213,6 +236,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                 }
             }
         })
+
 
         self.tableView.reloadData()
     }
