@@ -225,75 +225,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             }
         })
     }
-/*
-    func populateData() {
 
-        //Pulls TableData for UITableView
-        DataService.ds.REF_VENUE.observe(.value, with: { (snapshot) in
-
-            self.posts = [] // THIS IS THE NEW LINE
-
-            if snapshot.exists(){
-                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                    for snap in snapshot {
-
-
-                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                            let key = snap.key
-                            let post = Post(postKey: key, postData: postDict)
-                            self.posts.append(post)
-                        }
-
-                        //self.postData = snap.value as! [String : AnyObject]
-                        let postData = snap.value as! [String : AnyObject]
-                        let distance = self.calculateDistance(userlat: self.userLatt, userLon: self.userLonn, venueLat: /*self.*/postData["LATITUDE"]! as! CLLocationDegrees, venueLon: /*self.*/postData["LONGITUDE"]! as! CLLocationDegrees)
-                        let aa : Int = Int(distance)!
-                        if (aa <= 10){
-                            self.finalDict.append(postData) // here data is passed in a dict for map annotations with matching                             //self.finalDict.append(self.postData) // here data is passed in a dict for map annotations with matching results
-
-                            //Change To Pull Dictionary out of Final Dict Array
-                            // if let locationArray = self.finalDict  {
-                            for obj in self.finalDict {
-                                if let name = obj["NAME"] as? String {
-                                    print(name)
-                                }
-                                if let address = obj["ADDRESS"] as? String {
-                                    print(address)
-                                }
-
-                                if let handicap = obj["HANDICAP"] as? String {
-                                    print(handicap)
-                                }
-
-                                if let latitude = obj["LATITUDE"] as? Double {
-                                    print(latitude)
-                                }
-
-                                if let longitude = obj["LONGITUDE"] as? Double {
-                                    print(longitude)
-                                }
-
-                                // self.finalDict.append(locationArray)
-                            }
-
-
-                        }
-                        /*}
-                         else{
-                         print("Something Went Horribly Wrong!")
-                         }*/
-
-                    }
-
-
-                    self.getDataForMapAnnotation(snapDict: self.finalDict)
-                }
-                self.tableView.reloadData()
-
-            }
-        })
-    }
-*/
     //TableView Configure
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
