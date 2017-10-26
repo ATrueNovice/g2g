@@ -18,11 +18,6 @@ class PostCell: UITableViewCell {
     var post: Post!
 
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func configureCell(post: Post){
         self.post = post
         self.nameLbl.text = post.locationName.capitalized
@@ -30,6 +25,7 @@ class PostCell: UITableViewCell {
         self.handicapLbl.text = post.handicap.capitalized
         
     }
+
 
 }
 

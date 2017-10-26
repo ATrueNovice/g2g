@@ -13,6 +13,9 @@ import CoreLocation
 import SwiftKeychainWrapper
 import GoogleMobileAds
 
+class PointAnnotation : MKPointAnnotation {
+    var post : Post!
+}
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +37,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     var finalDict = [[String: AnyObject]]()
     var userLatt = CLLocationDegrees()
     var userLonn = CLLocationDegrees()
+    var finalArray = [Dictionary<String, AnyObject>]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,19 +149,31 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         return annotationView
     }
 
-    func calculateDistance(userlat: CLLocationDegrees, userLon:CLLocationDegrees, venueLat:CLLocationDegrees, venueLon:CLLocationDegrees) -> String {
+    func calculateDistance(userlat: CLLocationDegrees, userLon:CLLocationDegrees, venueLat:CLLocationDegrees, venueLon:CLLocationDegrees) -> Double {
         let userLocation:CLLocation = CLLocation(latitude: userlat, longitude: userLon)
         let priceLocation:CLLocation = CLLocation(latitude: venueLat, longitude: venueLon)
-        let distance = String(format: "%.0f", userLocation.distance(from: priceLocation)/1000)
-        return distance
+        //let distance = String(format: "%.0f", userLocation.distance(from: priceLocation)/1000)
+        return userLocation.distance(from: priceLocation)/1000
     }
 
 
 
-    func getDataForMapAnnotation(snapDict: [[String:AnyObject]]){
+    func getDataForMapAnnotation(/*snapDict: [[String:AnyObject]]*/){
 
+        posts.forEach { post in
+
+            let center = CLLocationCoordinate2D(latitude: post.latitude, longitude: post.longitude)
+            _ = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.75, longitudeDelta: 0.75))
+
+            let annotation = PointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2DMake(post.latitude, post.longitude)
+            annotation.title = post.locationName.capitalized
+            annotation.subtitle = post.handicap.capitalized
+            annotation.post = post
+            self.mapView.addAnnotation(annotation)
+        }
         //Populates Map with annotations.
-
+/*
         for key in snapDict{
 
             let lat = key["LATITUDE"] as! CLLocationDegrees
@@ -172,11 +189,43 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             annotation.subtitle = subtitle?.capitalized
             self.mapView.addAnnotation(annotation)
         }
-
+*/
 
 
     }
 
+    func populateData() {
+
+        //Pulls TableData for UITableView
+        DataService.ds.REF_VENUE.observe(.value, with: { (snapshot) in
+
+            self.posts = [] // THIS IS THE NEW LINE
+
+            if snapshot.exists(){
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    for snap in snapshot {
+
+                        if let snapValue = snap.value as? [String:AnyObject],
+                            let venueLat = snapValue["LATITUDE"] as? Double,
+                            let venueLong = snapValue["LONGITUDE"] as? Double
+                        {
+                            let distance = self.calculateDistance(userlat: self.userLatt, userLon: self.userLonn, venueLat: venueLat, venueLon: venueLong)
+                            if distance <= 10 {
+                                let key = snap.key
+                                let post = Post(postKey: key, postData: snapValue)
+                                self.posts.append(post)
+                            }
+                        }
+                    }
+
+                    self.getDataForMapAnnotation()
+                }
+                self.tableView.reloadData()
+
+            }
+        })
+    }
+/*
     func populateData() {
 
         //Pulls TableData for UITableView
@@ -195,52 +244,56 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                             self.posts.append(post)
                         }
 
-                        self.postData = snap.value as! [String : AnyObject]
-                        let distance = self.calculateDistance(userlat: self.userLatt, userLon: self.userLonn, venueLat: self.postData["LATITUDE"]! as! CLLocationDegrees, venueLon: self.postData["LONGITUDE"]! as! CLLocationDegrees)
+                        //self.postData = snap.value as! [String : AnyObject]
+                        let postData = snap.value as! [String : AnyObject]
+                        let distance = self.calculateDistance(userlat: self.userLatt, userLon: self.userLonn, venueLat: /*self.*/postData["LATITUDE"]! as! CLLocationDegrees, venueLon: /*self.*/postData["LONGITUDE"]! as! CLLocationDegrees)
                         let aa : Int = Int(distance)!
                         if (aa <= 10){
-                            self.finalDict.append(self.postData) // here data is passed in a dict for map annotations with matching results
+                            self.finalDict.append(postData) // here data is passed in a dict for map annotations with matching                             //self.finalDict.append(self.postData) // here data is passed in a dict for map annotations with matching results
 
                             //Change To Pull Dictionary out of Final Dict Array
-                            if let locationArray = self.finalDict as? [Dictionary<String, Any>] {
-                                for obj in locationArray {
-                                    if let name = obj["NAME"] as? String {
-                                        print(name)
-                                    }
-                                    if let address = obj["ADDRESS"] as? String {
-                                        print(address)
-                                    }
-
-                                    if let handicap = obj["HANDICAP"] as? String {
-                                        print(handicap)
-                                    }
-
-                                    if let latitude = obj["LATITUDE"] as? Double {
-                                        print(latitude)
-                                    }
-
-                                    if let longitude = obj["LONGITUDE"] as? Double {
-                                        print(longitude)
-                                    }
+                            // if let locationArray = self.finalDict  {
+                            for obj in self.finalDict {
+                                if let name = obj["NAME"] as? String {
+                                    print(name)
                                 }
-                                self.posts.append(locationArray)
+                                if let address = obj["ADDRESS"] as? String {
+                                    print(address)
+                                }
+
+                                if let handicap = obj["HANDICAP"] as? String {
+                                    print(handicap)
+                                }
+
+                                if let latitude = obj["LATITUDE"] as? Double {
+                                    print(latitude)
+                                }
+
+                                if let longitude = obj["LONGITUDE"] as? Double {
+                                    print(longitude)
+                                }
+
+                                // self.finalDict.append(locationArray)
                             }
+
+
                         }
-                        else{
-                        }
+                        /*}
+                         else{
+                         print("Something Went Horribly Wrong!")
+                         }*/
 
                     }
 
 
                     self.getDataForMapAnnotation(snapDict: self.finalDict)
                 }
+                self.tableView.reloadData()
+
             }
         })
-
-
-        self.tableView.reloadData()
     }
-
+*/
     //TableView Configure
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -250,7 +303,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? PostCell {
-            let cellData = posts[indexPath.row]
+            let cellData = posts[indexPath.row] //finalDict[indexPath.row]
             cell.configureCell(post: cellData)
             return cell
         } else {
@@ -265,11 +318,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         performSegue(withIdentifier: "previewSegue", sender: post)
     }
 
-    //MapView Segue
-    //    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-    //        performSegue(withIdentifier: "previewSegue", sender: posts[indexPath.])
-    //    }
-    // Sender with Location Name and Address
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            if let point = view.annotation as? PointAnnotation {
+                print(point)
+                // performSegue(withIdentifier: "previewSegue", sender: point.post)
+            }
+
+        }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {

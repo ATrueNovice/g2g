@@ -15,6 +15,8 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
     @IBOutlet weak var pLocationLbl: UILabel!
     @IBOutlet weak var pAddressLbl: UILabel!
     @IBOutlet weak var previewMap: MKMapView!
+    @IBOutlet weak var bannerView: GADBannerView!
+
 
     private var locationData: Post!
     var interstitial: GADInterstitial!
@@ -42,6 +44,10 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         interstitial.delegate = self
 
 
+        bannerView.adUnitID = "ca-app-pub-8509730756658652/2175966466"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
 
         //Map Data
         let lat = locationData.latitude
@@ -65,12 +71,6 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
     //Dismiss View
     @IBAction func backPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
 
     }
 
@@ -161,6 +161,11 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         mapItem.name = locationData.locationName
         mapItem.openInMaps(launchOptions: options)
 
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
 
     }
 }
