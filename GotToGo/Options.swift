@@ -43,4 +43,15 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
         }
     }
 
+    @IBAction func generalQuestions(_ sender: Any) {
+            let mailVC = MFMailComposeViewController()
+            mailVC.mailComposeDelegate = self
+            mailVC.setToRecipients(["publicrelations@hscottindustries.com"])
+            mailVC.setSubject("We Would Love To Hear From You!")
+            mailVC.setMessageBody("Tell Us What's On Your Mind.", isHTML: false)
+            present(mailVC, animated: true, completion: nil)
+
+        }
+
+
 }
