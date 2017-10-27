@@ -432,19 +432,23 @@
                                     <action selector="questionPage:" destination="IBg-1O-v6M" eventType="touchUpInside" id="bfK-41-zff"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hsi Home" translatesAutoresizingMaskIntoConstraints="NO" id="cKC-2a-DMI">
-                                <rect key="frame" x="146" y="490" width="82" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="82" id="H6M-Vt-3is"/>
-                                    <constraint firstAttribute="height" constant="82" id="vN4-oB-Yxn"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any General Questions:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gq-DF-VnQ">
                                 <rect key="frame" x="8" y="335" width="186" height="23"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zet-EG-c1N">
+                                <rect key="frame" x="146" y="490" width="82" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="o62-Og-bba"/>
+                                    <constraint firstAttribute="height" constant="82" id="sJ2-nb-Cdd"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Hsi Home"/>
+                                <connections>
+                                    <action selector="openHomePage:" destination="IBg-1O-v6M" eventType="touchUpInside" id="ICc-Jy-vjJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -454,11 +458,10 @@
                             <constraint firstItem="Aa1-xP-Peh" firstAttribute="top" secondItem="BnT-pM-1gs" secondAttribute="bottom" id="9qO-KX-GwA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OQT-g9-YQi" secondAttribute="trailing" constant="-8" id="Brx-AR-2KQ"/>
                             <constraint firstItem="5ip-Jg-gpj" firstAttribute="centerX" secondItem="qmw-ot-LZ2" secondAttribute="centerX" id="Bye-5e-lVN"/>
-                            <constraint firstItem="cKC-2a-DMI" firstAttribute="leading" secondItem="qmw-ot-LZ2" secondAttribute="leadingMargin" constant="130" id="Dqn-yS-E3n"/>
                             <constraint firstAttribute="trailing" secondItem="BnT-pM-1gs" secondAttribute="trailing" id="EUN-oz-Fbi"/>
                             <constraint firstItem="5ip-Jg-gpj" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" constant="20" id="FQS-Gu-ncF"/>
                             <constraint firstItem="pro-wF-pY0" firstAttribute="top" secondItem="UMW-XY-EOg" secondAttribute="bottom" constant="122.5" id="FkG-AK-0ya"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cKC-2a-DMI" secondAttribute="trailing" constant="131" id="JIG-4y-cb9"/>
+                            <constraint firstItem="Aa1-xP-Peh" firstAttribute="top" secondItem="zet-EG-c1N" secondAttribute="bottom" constant="95" id="Gv4-mm-W3W"/>
                             <constraint firstAttribute="trailing" secondItem="me8-dZ-Nv8" secondAttribute="trailing" constant="204.5" id="Knz-P1-apc"/>
                             <constraint firstAttribute="trailing" secondItem="Sp7-Ox-h48" secondAttribute="trailing" constant="329" id="POE-pu-N2R"/>
                             <constraint firstItem="Aa1-xP-Peh" firstAttribute="top" secondItem="pro-wF-pY0" secondAttribute="bottom" constant="187" id="SC8-l8-ScK"/>
@@ -469,7 +472,6 @@
                             <constraint firstItem="OQT-g9-YQi" firstAttribute="leading" secondItem="5ip-Jg-gpj" secondAttribute="trailing" constant="41.5" id="cBe-6I-HAr"/>
                             <constraint firstItem="cgr-Gm-yVi" firstAttribute="leading" secondItem="qmw-ot-LZ2" secondAttribute="leading" constant="8" id="cYV-ql-d8p"/>
                             <constraint firstItem="zZt-DS-heb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="fHG-h5-FLg"/>
-                            <constraint firstItem="Aa1-xP-Peh" firstAttribute="top" secondItem="cKC-2a-DMI" secondAttribute="bottom" constant="95" id="fb8-CM-lM6"/>
                             <constraint firstItem="OQT-g9-YQi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5ip-Jg-gpj" secondAttribute="centerX" symbolic="YES" id="fqE-u6-Dxz"/>
                             <constraint firstItem="BnT-pM-1gs" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" id="hRF-d5-kAo"/>
                             <constraint firstItem="cgr-Gm-yVi" firstAttribute="top" secondItem="zZt-DS-heb" secondAttribute="bottom" constant="20" id="jTH-rh-W15"/>
@@ -480,6 +482,8 @@
                             <constraint firstAttribute="trailing" secondItem="zZt-DS-heb" secondAttribute="trailing" constant="16.5" id="n7C-B4-SS5"/>
                             <constraint firstItem="BnT-pM-1gs" firstAttribute="leading" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="p7A-xp-QEV"/>
                             <constraint firstItem="9gq-DF-VnQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="qgI-mw-xE4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zet-EG-c1N" secondAttribute="trailing" constant="131" id="ssm-Hv-XsZ"/>
+                            <constraint firstItem="zet-EG-c1N" firstAttribute="leading" secondItem="qmw-ot-LZ2" secondAttribute="leadingMargin" constant="130" id="zWG-O4-Lcj"/>
                             <constraint firstItem="Sp7-Ox-h48" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="zmk-dZ-5Ct"/>
                             <constraint firstItem="OQT-g9-YQi" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" constant="17" id="zsE-Se-g5p"/>
                         </constraints>
@@ -487,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bb-eK-zLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218" y="1057"/>
+            <point key="canvasLocation" x="2216.8000000000002" y="1055.6221889055473"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="7yZ-dD-uPF">

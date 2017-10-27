@@ -53,5 +53,18 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
 
         }
 
+    @IBAction func openHomePage(_ sender: Any) {
+
+        let url = URL(string: "https://www.hscottindustries.com")!
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+                print("Opened Page")
+            })
+
+        }
+
+    }
+
+
 
 }
