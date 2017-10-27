@@ -34,10 +34,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     //Array With data from FireBase
     var posts = [Post]()
     var postData = [String:AnyObject]()
-    var finalDict = [[String: AnyObject]]()
     var userLatt = CLLocationDegrees()
     var userLonn = CLLocationDegrees()
-    var finalArray = [Dictionary<String, AnyObject>]()
 
 
     override func viewDidLoad() {
@@ -158,7 +156,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
 
 
-    func getDataForMapAnnotation(/*snapDict: [[String:AnyObject]]*/){
+    func getDataForMapAnnotation(){
 
         posts.forEach { post in
 
@@ -172,25 +170,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             annotation.post = post
             self.mapView.addAnnotation(annotation)
         }
-        //Populates Map with annotations.
-/*
-        for key in snapDict{
-
-            let lat = key["LATITUDE"] as! CLLocationDegrees
-            let long = key["LONGITUDE"] as! CLLocationDegrees
-            let title = key["NAME"] as! String
-            let subtitle = key["HANDICAP"]
-            let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            _ = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.75, longitudeDelta: 0.75))
-
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2DMake(lat, long)
-            annotation.title = title.capitalized
-            annotation.subtitle = subtitle?.capitalized
-            self.mapView.addAnnotation(annotation)
-        }
-*/
-
 
     }
 
