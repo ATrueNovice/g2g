@@ -53,12 +53,14 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         let lat = locationData.latitude
         let long = locationData.longitude
         let title = locationData.locationName
+        let handi = locationData.handicap
         let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
 
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2DMake(lat, long)
         annotation.title = title.capitalized
+        annotation.subtitle = handi
         self.previewMap.addAnnotation(annotation)
         self.previewMap.setRegion(region, animated: true)
     }

@@ -408,7 +408,6 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Here"/>
                                 <connections>
-                                    <action selector="emailPressed:" destination="IBg-1O-v6M" eventType="touchUpInside" id="kLf-Is-Quh"/>
                                     <action selector="generalQuestions:" destination="IBg-1O-v6M" eventType="touchUpInside" id="BJb-bX-eB3"/>
                                 </connections>
                             </button>

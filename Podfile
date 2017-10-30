@@ -15,4 +15,6 @@ pod 'Firebase/Core'
         pod 'SwiftKeychainWrapper'
         pod 'GoogleSignIn'
  	pod 'Firebase/AdMob'
+	pod 'Firebase/Crash'
+	pod ‘Firebase/Performance'
 end

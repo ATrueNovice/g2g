@@ -189,7 +189,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                             let venueLong = snapValue["LONGITUDE"] as? Double
                         {
                             let distance = self.calculateDistance(userlat: self.userLatt, userLon: self.userLonn, venueLat: venueLat, venueLon: venueLong)
-                            if distance <= 10 {
+                            if distance <= 3 {
                                 let key = snap.key
                                 let post = Post(postKey: key, postData: snapValue)
                                 self.posts.append(post)

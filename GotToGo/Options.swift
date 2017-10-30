@@ -13,10 +13,29 @@ import UIKit
 class Options: UIViewController, MFMailComposeViewControllerDelegate {
 
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let state: UIApplicationState = UIApplication.shared.applicationState
+
+        if state == .background {
+            print("App Entered Background")
+        }
+
+        else if state == .active {
+            print("We Are Up And Running baby")
+        }
+    }
+
+
+
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
 
     }
+
+
 
     @IBAction func emailPressed(_ sender: Any) {
         let mailVC = MFMailComposeViewController()
@@ -25,6 +44,16 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
         mailVC.setSubject("Got To Go Issues")
         mailVC.setMessageBody("Please Describe Issue", isHTML: false)
         present(mailVC, animated: true, completion: nil)
+
+        let state: UIApplicationState = UIApplication.shared.applicationState
+
+        if state == .background {
+            print("App Entered Background")
+        }
+
+        else if state == .active {
+            print("We Are Up And Running baby")
+        }
 
     }
 
@@ -41,6 +70,16 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
             })
 
         }
+
+        let state: UIApplicationState = UIApplication.shared.applicationState
+
+        if state == .background {
+            print("App Entered Background")
+        }
+
+        else if state == .active {
+            print("We Are Up And Running baby")
+        }
     }
 
     @IBAction func generalQuestions(_ sender: Any) {
@@ -51,6 +90,16 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
             mailVC.setMessageBody("Tell Us What's On Your Mind.", isHTML: false)
             present(mailVC, animated: true, completion: nil)
 
+        let state: UIApplicationState = UIApplication.shared.applicationState
+
+        if state == .background {
+            print("App Entered Background")
+        }
+
+        else if state == .active {
+            print("We Are Up And Running baby")
+        }
+
         }
 
     @IBAction func openHomePage(_ sender: Any) {
@@ -58,12 +107,15 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
         let url = URL(string: "https://www.hscottindustries.com")!
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
-                print("Opened Page")
+                print("Home Page Opened")
             })
 
         }
 
+
+
     }
+
 
 
 
