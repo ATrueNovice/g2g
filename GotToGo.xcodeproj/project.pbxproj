@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4959ADC01B65DE3A90E5FC94 /* Pods_GotToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E136F4A85458884BF9A1FB6 /* Pods_GotToGo.framework */; };
 		6518D40C1F5C0EC500B7591D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D40B1F5C0EC500B7591D /* DataService.swift */; };
 		6518D40E1F5C104D00B7591D /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D40D1F5C104D00B7591D /* constants.swift */; };
 		6518D4101F5C109A00B7591D /* TextBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D40F1F5C109A00B7591D /* TextBoxes.swift */; };
@@ -30,11 +31,11 @@
 		65DC00221F5B647900783254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65DC00201F5B647900783254 /* Main.storyboard */; };
 		65DC00241F5B647900783254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DC00231F5B647900783254 /* Assets.xcassets */; };
 		65DC00271F5B647900783254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65DC00251F5B647900783254 /* LaunchScreen.storyboard */; };
-		E1FC51F89C9AF86BB11227BC /* Pods_GotToGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70815EB96089E09C333C47AA /* Pods_GotToGo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		098C51938E08F7740DF3D21D /* Pods-GotToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GotToGo/Pods-GotToGo.release.xcconfig"; sourceTree = "<group>"; };
+		10CE90683829FF1D22C6848F /* Pods-GotToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GotToGo/Pods-GotToGo.debug.xcconfig"; sourceTree = "<group>"; };
+		3E136F4A85458884BF9A1FB6 /* Pods_GotToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GotToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6518D40B1F5C0EC500B7591D /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6518D40D1F5C104D00B7591D /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		6518D40F1F5C109A00B7591D /* TextBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBoxes.swift; sourceTree = "<group>"; };
@@ -71,8 +72,7 @@
 		65DC00231F5B647900783254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65DC00261F5B647900783254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65DC00281F5B647900783254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70815EB96089E09C333C47AA /* Pods_GotToGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GotToGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2118A359272E028911841D7 /* Pods-GotToGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotToGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GotToGo/Pods-GotToGo.debug.xcconfig"; sourceTree = "<group>"; };
+		BDCD1F2E18FE500B20B45388 /* Pods-GotToGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotToGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GotToGo/Pods-GotToGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			files = (
 				653A4D751F971E490017A9AC /* GoogleMobileAds.framework in Frameworks */,
 				653A4D6C1F9712730017A9AC /* StoreKit.framework in Frameworks */,
-				E1FC51F89C9AF86BB11227BC /* Pods_GotToGo.framework in Frameworks */,
+				4959ADC01B65DE3A90E5FC94 /* Pods_GotToGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +180,7 @@
 				65DC001B1F5B647900783254 /* GotToGo */,
 				65DC001A1F5B647900783254 /* Products */,
 				A6F147E9AC07C1EE565AFEF1 /* Frameworks */,
-				E043B5212B03227C5F627A0A /* Pods */,
+				76648C3EEAC56D6B4E5D1290 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,22 +214,22 @@
 			path = GotToGo;
 			sourceTree = "<group>";
 		};
+		76648C3EEAC56D6B4E5D1290 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10CE90683829FF1D22C6848F /* Pods-GotToGo.debug.xcconfig */,
+				BDCD1F2E18FE500B20B45388 /* Pods-GotToGo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A6F147E9AC07C1EE565AFEF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				653A4D6B1F9712730017A9AC /* StoreKit.framework */,
-				70815EB96089E09C333C47AA /* Pods_GotToGo.framework */,
+				3E136F4A85458884BF9A1FB6 /* Pods_GotToGo.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E043B5212B03227C5F627A0A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C2118A359272E028911841D7 /* Pods-GotToGo.debug.xcconfig */,
-				098C51938E08F7740DF3D21D /* Pods-GotToGo.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,13 +239,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65DC002B1F5B647900783254 /* Build configuration list for PBXNativeTarget "GotToGo" */;
 			buildPhases = (
-				D2CF88080987007FBE6A7DBA /* [CP] Check Pods Manifest.lock */,
+				1CB49CE0F1DB048F23F1228F /* [CP] Check Pods Manifest.lock */,
 				65DC00151F5B647900783254 /* Sources */,
 				65DC00161F5B647900783254 /* Frameworks */,
 				65DC00171F5B647900783254 /* Resources */,
-				A795D5F31352058816B9320F /* [CP] Embed Pods Frameworks */,
-				83936EFA132ED3AAB7FFEAC7 /* [CP] Copy Pods Resources */,
-				6524E8351FA3952900289676 /* ShellScript */,
+				6524E8351FA3952900289676 /* Run Script */,
+				972ABBBFFEEC975BB1B6F69D /* [CP] Embed Pods Frameworks */,
+				7E640A8CCBEFE59C2D5D4FD3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,6 +275,9 @@
 								enabled = 1;
 							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -314,20 +317,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6524E8351FA3952900289676 /* ShellScript */ = {
+		1CB49CE0F1DB048F23F1228F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GotToGo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6524E8351FA3952900289676 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "GOOGLE_APP_ID=1 :com.hsi.got2go\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"Untitled/Users/new/Desktop/GotToGo/got2go-6e43a-firebase-crashreporting-s6fj5-407d68b1ce.json\"";
+			shellScript = "GOOGLE_APP_ID=1 :1:373979399640:ios:0525841507f95cc1\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym-util.bash \"Untitled/Users/new/Desktop/GotToGo/got2go-6e43a-firebase-crashreporting-s6fj5-407d68b1ce.json\"";
 		};
-		83936EFA132ED3AAB7FFEAC7 /* [CP] Copy Pods Resources */ = {
+		7E640A8CCBEFE59C2D5D4FD3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -345,7 +367,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GotToGo/Pods-GotToGo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A795D5F31352058816B9320F /* [CP] Embed Pods Frameworks */ = {
+		972ABBBFFEEC975BB1B6F69D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,24 +401,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GotToGo/Pods-GotToGo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2CF88080987007FBE6A7DBA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GotToGo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -559,41 +563,57 @@
 		};
 		65DC002C1F5B647900783254 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2118A359272E028911841D7 /* Pods-GotToGo.debug.xcconfig */;
+			baseConfigurationReference = 10CE90683829FF1D22C6848F /* Pods-GotToGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GotToGo/GotToGo.entitlements;
-				DEVELOPMENT_TEAM = AK4RWB2TUN;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GotToGo",
 				);
 				INFOPLIST_FILE = GotToGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HSI.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
 		65DC002D1F5B647900783254 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 098C51938E08F7740DF3D21D /* Pods-GotToGo.release.xcconfig */;
+			baseConfigurationReference = BDCD1F2E18FE500B20B45388 /* Pods-GotToGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GotToGo/GotToGo.entitlements;
-				DEVELOPMENT_TEAM = AK4RWB2TUN;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sean  Haughton-Scott (AK4RWB2TUN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GotToGo",
 				);
 				INFOPLIST_FILE = GotToGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HSI.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
