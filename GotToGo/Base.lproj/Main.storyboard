@@ -179,10 +179,10 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got_to_go_with_photo" translatesAutoresizingMaskIntoConstraints="NO" id="uCQ-3p-0nj">
-                                                <rect key="frame" x="150" y="20" width="102" height="28"/>
+                                                <rect key="frame" x="150" y="30" width="102" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="102" id="Gan-PH-LMO"/>
-                                                    <constraint firstAttribute="height" constant="28" id="uf5-V9-ESQ"/>
+                                                    <constraint firstAttribute="height" constant="23" id="uf5-V9-ESQ"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WY-mp-6Vh">
@@ -322,7 +322,7 @@
                                             <constraint firstItem="QAL-1I-eRF" firstAttribute="leading" secondItem="4m4-g1-wyC" secondAttribute="leading" id="kq9-h8-SEF"/>
                                             <constraint firstItem="aJq-pA-5WU" firstAttribute="leading" secondItem="4m4-g1-wyC" secondAttribute="leading" constant="10" id="qDg-kA-7wD"/>
                                             <constraint firstAttribute="bottom" secondItem="bh0-Lv-FjX" secondAttribute="bottom" constant="-3" id="qaR-su-Kpe"/>
-                                            <constraint firstItem="uCQ-3p-0nj" firstAttribute="top" secondItem="4m4-g1-wyC" secondAttribute="top" constant="20" id="w38-sK-PIb"/>
+                                            <constraint firstItem="uCQ-3p-0nj" firstAttribute="top" secondItem="4m4-g1-wyC" secondAttribute="top" constant="30" id="w38-sK-PIb"/>
                                             <constraint firstItem="J1Q-yC-46C" firstAttribute="top" secondItem="aJq-pA-5WU" secondAttribute="bottom" constant="8" id="wcJ-uv-fKp"/>
                                             <constraint firstAttribute="trailing" secondItem="QAL-1I-eRF" secondAttribute="trailing" id="xx9-2d-ehe"/>
                                         </constraints>
@@ -726,10 +726,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6ib-jc-riy">
-                                <rect key="frame" x="10" y="23" width="355" height="28"/>
+                                <rect key="frame" x="10" y="23" width="355" height="23"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orU-5s-XB2">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="23"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="More Info">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -739,14 +739,14 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got_to_go_with_photo" translatesAutoresizingMaskIntoConstraints="NO" id="tU5-iK-IPW">
-                                        <rect key="frame" x="119.66666666666666" y="0.0" width="102" height="28"/>
+                                        <rect key="frame" x="119.66666666666666" y="0.0" width="102" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="cG5-YZ-wEQ"/>
+                                            <constraint firstAttribute="height" constant="23" id="cG5-YZ-wEQ"/>
                                             <constraint firstAttribute="width" constant="102" id="xb8-HW-8NM"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idc-ji-dc4">
-                                        <rect key="frame" x="249" y="0.0" width="106" height="28"/>
+                                        <rect key="frame" x="249" y="0.0" width="106" height="23"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Search Again">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -758,7 +758,7 @@
                                 </subviews>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="65i-ML-Lhq">
-                                <rect key="frame" x="0.0" y="59" width="375" height="505"/>
+                                <rect key="frame" x="0.0" y="54" width="375" height="510"/>
                             </mapView>
                         </subviews>
                         <constraints>
@@ -796,6 +796,7 @@
                         <outlet property="previewMap" destination="65i-ML-Lhq" id="0by-2z-3yp"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-Tg-ub0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" id="DLF-iu-xqx">
                     <rect key="frame" x="0.0" y="0.0" width="355" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -824,7 +825,6 @@
                         </button>
                     </subviews>
                 </stackView>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-Tg-ub0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2827.536231884058" y="126.35869565217392"/>
         </scene>

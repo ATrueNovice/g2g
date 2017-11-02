@@ -39,19 +39,19 @@ class SignIn: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, UITextFi
         }
     }
 
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let authentication = user.authentication {
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-            Auth.auth().signIn(with: credential, completion: { (user, error) -> Void in
-                if error != nil {
-                    print("Problem at signing in with google with error : \(String(describing: error))")
-                } else if error == nil {
-                    print("user successfully signed in through GOOGLE! uid:\(Auth.auth().currentUser!.uid)")
-                    print("signed in")
-                    self.firebaseAuth(credential)
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if error != nil {
+            return
+        }
 
-                }
-            })
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if error != nil {
+                // ...
+                return
+            }
+            self.firebaseAuth(credential)
         }
     }
 

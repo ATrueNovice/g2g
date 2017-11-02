@@ -40,7 +40,7 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
     @IBAction func emailPressed(_ sender: Any) {
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
-        mailVC.setToRecipients(["publicrelations@hscottindustries.com"])
+        mailVC.setToRecipients(["help@hscottindustries.com"])
         mailVC.setSubject("Got To Go Issues")
         mailVC.setMessageBody("Please Describe Issue", isHTML: false)
         present(mailVC, animated: true, completion: nil)

@@ -252,6 +252,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
         let keychainMessage = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         try!  Auth.auth().signOut()
+        GIDSignIn.sharedInstance().signOut()
         print("NOTE: Key Forgotten \(keychainMessage)")
         self.dismiss(animated: false, completion: nil)
 
