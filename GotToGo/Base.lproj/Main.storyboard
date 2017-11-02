@@ -161,9 +161,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvx-mH-47N">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="9oR-6g-dHP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="9oR-6g-dHP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4m4-g1-wyC">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
@@ -332,8 +331,12 @@
                                 <constraints>
                                     <constraint firstItem="4m4-g1-wyC" firstAttribute="top" secondItem="dvx-mH-47N" secondAttribute="top" id="0Ca-T4-TOs"/>
                                     <constraint firstAttribute="bottom" secondItem="4m4-g1-wyC" secondAttribute="bottom" id="88M-6t-W1A"/>
+                                    <constraint firstItem="9oR-6g-dHP" firstAttribute="leading" secondItem="dvx-mH-47N" secondAttribute="leading" id="CHc-65-fOE"/>
+                                    <constraint firstItem="9oR-6g-dHP" firstAttribute="top" secondItem="dvx-mH-47N" secondAttribute="top" id="NRL-Lz-HB2"/>
+                                    <constraint firstAttribute="bottom" secondItem="9oR-6g-dHP" secondAttribute="bottom" id="fC9-H7-mi7"/>
                                     <constraint firstAttribute="trailing" secondItem="4m4-g1-wyC" secondAttribute="trailing" id="fb3-r3-uwW"/>
                                     <constraint firstItem="4m4-g1-wyC" firstAttribute="leading" secondItem="dvx-mH-47N" secondAttribute="leading" id="gT6-Nk-zTK"/>
+                                    <constraint firstAttribute="trailing" secondItem="9oR-6g-dHP" secondAttribute="trailing" id="v2a-ai-Oed"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -471,7 +474,7 @@
                             <constraint firstItem="me8-dZ-Nv8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="WNZ-vk-oCY"/>
                             <constraint firstAttribute="trailing" secondItem="UMW-XY-EOg" secondAttribute="trailing" constant="321" id="XGY-k4-dmH"/>
                             <constraint firstItem="OQT-g9-YQi" firstAttribute="leading" secondItem="5ip-Jg-gpj" secondAttribute="trailing" constant="35" id="cBe-6I-HAr"/>
-                            <constraint firstItem="cgr-Gm-yVi" firstAttribute="leading" secondItem="qmw-ot-LZ2" secondAttribute="leading" constant="8" id="cYV-ql-d8p"/>
+                            <constraint firstItem="cgr-Gm-yVi" firstAttribute="leading" secondItem="zZt-DS-heb" secondAttribute="leading" id="cYV-ql-d8p"/>
                             <constraint firstItem="zZt-DS-heb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="fHG-h5-FLg"/>
                             <constraint firstItem="OQT-g9-YQi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5ip-Jg-gpj" secondAttribute="centerX" symbolic="YES" id="fqE-u6-Dxz"/>
                             <constraint firstItem="BnT-pM-1gs" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" id="hRF-d5-kAo"/>
@@ -836,6 +839,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eCU-rL-Nbw"/>
-        <segue reference="gbJ-SZ-9GD"/>
+        <segue reference="3ZG-n7-CbZ"/>
     </inferredMetricsTieBreakers>
 </document>
