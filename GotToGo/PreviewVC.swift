@@ -60,7 +60,7 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2DMake(lat, long)
         annotation.title = title.capitalized
-        annotation.subtitle = handi
+        annotation.subtitle = "Handicap Access " + handi
         self.previewMap.addAnnotation(annotation)
         self.previewMap.setRegion(region, animated: true)
     }

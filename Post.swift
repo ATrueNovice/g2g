@@ -9,6 +9,13 @@
 import Foundation
 import Firebase
 
+class PostLouis {
+    var locationName : String!
+
+    init(locationName: String/*, address: String, handicap: String*/) {
+        self.locationName = locationName.capitalized
+    }
+}
 
 class Post {
 
@@ -19,6 +26,7 @@ class Post {
     public var _latitude: CLLocationDegrees!
     public var _longitude: CLLocationDegrees!
     public var _postRef: DatabaseReference!
+    var distance : Double = 0
 
 
     var locationName: String {

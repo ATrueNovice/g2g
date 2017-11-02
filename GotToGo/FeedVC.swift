@@ -96,7 +96,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
+    //User clicked callout button
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let point = view.annotation as? PointAnnotation {
+            performSegue(withIdentifier: "previewSegue", sender: point.post)
+        }
+    }
 
+    //Update the suer location
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         if let loc = userLocation.location {
             if !centerMapped {
@@ -138,6 +145,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             subtitleView.numberOfLines = 2
             subtitleView.text = annotation.subtitle!
             annotationView?.detailCalloutAccessoryView = subtitleView
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
 
         }
         else {
@@ -150,8 +158,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     func calculateDistance(userlat: CLLocationDegrees, userLon:CLLocationDegrees, venueLat:CLLocationDegrees, venueLon:CLLocationDegrees) -> Double {
         let userLocation:CLLocation = CLLocation(latitude: userlat, longitude: userLon)
         let priceLocation:CLLocation = CLLocation(latitude: venueLat, longitude: venueLon)
-        //let distance = String(format: "%.0f", userLocation.distance(from: priceLocation)/1000)
+        _ = String(format: "%.0f", userLocation.distance(from: priceLocation)/1000)
         return userLocation.distance(from: priceLocation)/1000
+
+
     }
 
 
@@ -166,7 +176,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
             let annotation = PointAnnotation()
             annotation.coordinate = CLLocationCoordinate2DMake(post.latitude, post.longitude)
             annotation.title = post.locationName.capitalized
-            annotation.subtitle = post.handicap.capitalized
+            annotation.subtitle = "Handicap Access " + post.handicap.capitalized
             annotation.post = post
             self.mapView.addAnnotation(annotation)
         }
@@ -189,9 +199,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                             let venueLong = snapValue["LONGITUDE"] as? Double
                         {
                             let distance = self.calculateDistance(userlat: self.userLatt, userLon: self.userLonn, venueLat: venueLat, venueLon: venueLong)
+
                             if distance <= 2 {
                                 let key = snap.key
                                 let post = Post(postKey: key, postData: snapValue)
+                                post.distance = distance
                                 self.posts.append(post)
                             }
                         }
@@ -199,11 +211,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
 
                     self.getDataForMapAnnotation()
                 }
+
+                self.posts.sort {
+                    $0.distance < $1.distance
+                }
+
                 self.tableView.reloadData()
 
             }
         })
     }
+
+
 
     //TableView Configure
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -214,7 +233,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? PostCell {
-            let cellData = posts[indexPath.row] //finalDict[indexPath.row]
+            let cellData = posts[indexPath.row]
             cell.configureCell(post: cellData)
             return cell
         } else {
@@ -229,13 +248,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         performSegue(withIdentifier: "previewSegue", sender: post)
     }
 
+    /*
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             if let point = view.annotation as? PointAnnotation {
                 print(point)
                 // performSegue(withIdentifier: "previewSegue", sender: point.post)
             }
-
         }
+    */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {
