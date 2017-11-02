@@ -373,14 +373,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got_to_go_with_photo" translatesAutoresizingMaskIntoConstraints="NO" id="5ip-Jg-gpj">
-                                <rect key="frame" x="136.66666666666666" y="20" width="102" height="28"/>
+                                <rect key="frame" x="136.66666666666666" y="35" width="102" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="VCD-YI-kWk"/>
                                     <constraint firstAttribute="height" constant="28" id="bie-wC-ozD"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQT-g9-YQi">
-                                <rect key="frame" x="280.33333333333331" y="17" width="86.666666666666686" height="31"/>
+                                <rect key="frame" x="273.66666666666669" y="35" width="93.333333333333314" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="Search Again">
                                     <color key="titleColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -460,7 +460,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="OQT-g9-YQi" secondAttribute="trailing" constant="-8" id="Brx-AR-2KQ"/>
                             <constraint firstItem="5ip-Jg-gpj" firstAttribute="centerX" secondItem="qmw-ot-LZ2" secondAttribute="centerX" id="Bye-5e-lVN"/>
                             <constraint firstAttribute="trailing" secondItem="BnT-pM-1gs" secondAttribute="trailing" id="EUN-oz-Fbi"/>
-                            <constraint firstItem="5ip-Jg-gpj" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" constant="20" id="FQS-Gu-ncF"/>
+                            <constraint firstItem="5ip-Jg-gpj" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" constant="35" id="FQS-Gu-ncF"/>
                             <constraint firstItem="pro-wF-pY0" firstAttribute="top" secondItem="UMW-XY-EOg" secondAttribute="bottom" constant="122.5" id="FkG-AK-0ya"/>
                             <constraint firstItem="Aa1-xP-Peh" firstAttribute="top" secondItem="zet-EG-c1N" secondAttribute="bottom" constant="95" id="Gv4-mm-W3W"/>
                             <constraint firstAttribute="trailing" secondItem="me8-dZ-Nv8" secondAttribute="trailing" constant="204.5" id="Knz-P1-apc"/>
@@ -470,7 +470,7 @@
                             <constraint firstItem="Sp7-Ox-h48" firstAttribute="top" secondItem="9gq-DF-VnQ" secondAttribute="bottom" constant="10" id="Vp1-c4-kHB"/>
                             <constraint firstItem="me8-dZ-Nv8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="WNZ-vk-oCY"/>
                             <constraint firstAttribute="trailing" secondItem="UMW-XY-EOg" secondAttribute="trailing" constant="321" id="XGY-k4-dmH"/>
-                            <constraint firstItem="OQT-g9-YQi" firstAttribute="leading" secondItem="5ip-Jg-gpj" secondAttribute="trailing" constant="41.5" id="cBe-6I-HAr"/>
+                            <constraint firstItem="OQT-g9-YQi" firstAttribute="leading" secondItem="5ip-Jg-gpj" secondAttribute="trailing" constant="35" id="cBe-6I-HAr"/>
                             <constraint firstItem="cgr-Gm-yVi" firstAttribute="leading" secondItem="qmw-ot-LZ2" secondAttribute="leading" constant="8" id="cYV-ql-d8p"/>
                             <constraint firstItem="zZt-DS-heb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="fHG-h5-FLg"/>
                             <constraint firstItem="OQT-g9-YQi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5ip-Jg-gpj" secondAttribute="centerX" symbolic="YES" id="fqE-u6-Dxz"/>
@@ -485,7 +485,7 @@
                             <constraint firstItem="9gq-DF-VnQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="qgI-mw-xE4"/>
                             <constraint firstItem="zet-EG-c1N" firstAttribute="leading" secondItem="qmw-ot-LZ2" secondAttribute="leadingMargin" constant="130" id="zWG-O4-Lcj"/>
                             <constraint firstItem="Sp7-Ox-h48" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qmw-ot-LZ2" secondAttribute="leading" id="zmk-dZ-5Ct"/>
-                            <constraint firstItem="OQT-g9-YQi" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" constant="17" id="zsE-Se-g5p"/>
+                            <constraint firstItem="OQT-g9-YQi" firstAttribute="top" secondItem="qmw-ot-LZ2" secondAttribute="top" constant="35" id="zsE-Se-g5p"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -835,7 +835,7 @@
         <image name="home" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="t8g-ZJ-XIK"/>
+        <segue reference="eCU-rL-Nbw"/>
         <segue reference="gbJ-SZ-9GD"/>
     </inferredMetricsTieBreakers>
 </document>
