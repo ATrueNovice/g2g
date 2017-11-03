@@ -78,7 +78,7 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
 
     //MapView Focus
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000, 2000)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
 
         previewMap.setRegion(coordinateRegion, animated: true)
     }
