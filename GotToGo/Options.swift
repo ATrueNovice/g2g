@@ -13,19 +13,11 @@ import UIKit
 class Options: UIViewController, MFMailComposeViewControllerDelegate {
 
 
+    let state: UIApplicationState = UIApplication.shared.applicationState
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let state: UIApplicationState = UIApplication.shared.applicationState
-
-        if state == .background {
-            print("App Entered Background")
-        }
-
-        else if state == .active {
-            print("We Are Up And Running baby")
-        }
     }
 
 
@@ -44,8 +36,6 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
         mailVC.setSubject("Got To Go Issues")
         mailVC.setMessageBody("Please Describe Issue", isHTML: false)
         present(mailVC, animated: true, completion: nil)
-
-        let state: UIApplicationState = UIApplication.shared.applicationState
 
         if state == .background {
             print("App Entered Background")
@@ -71,8 +61,6 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
 
         }
 
-        let state: UIApplicationState = UIApplication.shared.applicationState
-
         if state == .background {
             print("App Entered Background")
         }
@@ -89,8 +77,6 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
             mailVC.setSubject("We Would Love To Hear From You!")
             mailVC.setMessageBody("Tell Us What's On Your Mind.", isHTML: false)
             present(mailVC, animated: true, completion: nil)
-
-        let state: UIApplicationState = UIApplication.shared.applicationState
 
         if state == .background {
             print("App Entered Background")
@@ -109,14 +95,6 @@ class Options: UIViewController, MFMailComposeViewControllerDelegate {
             UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
                 print("Home Page Opened")
             })
-
         }
-
-
-
     }
-
-
-
-
 }
