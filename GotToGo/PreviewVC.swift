@@ -18,6 +18,7 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
     @IBOutlet weak var bannerView: GADBannerView!
 
 
+
     private var locationData: Post!
     var interstitial: GADInterstitial!
 
@@ -75,6 +76,8 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         dismiss(animated: true, completion: nil)
 
     }
+
+    
 
     //MapView Focus
     func centerMapOnLocation(location: CLLocation) {
@@ -150,6 +153,13 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
     @IBAction func openMap(_ sender: Any) {
 
 
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+
+        }
+
         let regionDistance: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 500, longitudeDelta: 500)
         let coordinate =  CLLocationCoordinate2D(latitude: locationData.latitude, longitude: locationData.longitude)
 
@@ -163,11 +173,6 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         mapItem.name = locationData.locationName
         mapItem.openInMaps(launchOptions: options)
 
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
 
     }
 }
