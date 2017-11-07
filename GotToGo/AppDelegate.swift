@@ -11,6 +11,8 @@ import Firebase
 import FBSDKLoginKit
 import GoogleSignIn
 import GoogleMobileAds
+import FirebaseMessaging
+import UserNotifications
 
 @UIApplicationMain
 
@@ -23,16 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
         FirebaseApp.configure()
 
+        //Google LogIn
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
 
+        //Facebook Log In
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
+        //AdMob
         GADMobileAds.configure(withApplicationID: "ca-app-pub-8509730756658652/8064528485")
+
+        
 
         return true
     }
 
+    //Required Google Function
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
       print("Signing In With Google")
 

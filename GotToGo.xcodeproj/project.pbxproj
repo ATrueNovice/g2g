@@ -16,8 +16,8 @@
 		6518D4181F5C883B00B7591D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4171F5C883B00B7591D /* PostCell.swift */; };
 		6518D41A1F5DBEB700B7591D /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518D4191F5DBEB700B7591D /* PreviewVC.swift */; };
 		652C306B1F84690D004A2A9D /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652C306A1F84690D004A2A9D /* ForgotPassword.swift */; };
-		653A4D6C1F9712730017A9AC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653A4D6B1F9712730017A9AC /* StoreKit.framework */; };
 		653A4D751F971E490017A9AC /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653A4D741F971E490017A9AC /* GoogleMobileAds.framework */; };
+		653DAEE21FAEB28400681A79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653DAEE11FAEB28400681A79 /* StoreKit.framework */; };
 		6540E67E1FA300EF001B3A0E /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 6540E6751FA300EF001B3A0E /* GeoFire.m */; };
 		6540E67F1FA300EF001B3A0E /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6540E6771FA300EF001B3A0E /* GFBase32Utils.m */; };
 		6540E6801FA300EF001B3A0E /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6540E6791FA300EF001B3A0E /* GFGeoHash.m */; };
@@ -44,8 +44,8 @@
 		6518D4171F5C883B00B7591D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6518D4191F5DBEB700B7591D /* PreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
 		652C306A1F84690D004A2A9D /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
-		653A4D6B1F9712730017A9AC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		653A4D741F971E490017A9AC /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		653DAEE11FAEB28400681A79 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6540E66F1FA300EF001B3A0E /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
 		6540E6701FA300EF001B3A0E /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
 		6540E6711FA300EF001B3A0E /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653DAEE21FAEB28400681A79 /* StoreKit.framework in Frameworks */,
 				653A4D751F971E490017A9AC /* GoogleMobileAds.framework in Frameworks */,
-				653A4D6C1F9712730017A9AC /* StoreKit.framework in Frameworks */,
 				4959ADC01B65DE3A90E5FC94 /* Pods_GotToGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,7 +226,7 @@
 		A6F147E9AC07C1EE565AFEF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				653A4D6B1F9712730017A9AC /* StoreKit.framework */,
+				653DAEE11FAEB28400681A79 /* StoreKit.framework */,
 				3E136F4A85458884BF9A1FB6 /* Pods_GotToGo.framework */,
 			);
 			name = Frameworks;
@@ -269,8 +269,12 @@
 					65DC00181F5B647900783254 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = AK4RWB2TUN;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -279,6 +283,9 @@
 							};
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -570,21 +577,22 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AK4RWB2TUN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GotToGo",
 				);
 				INFOPLIST_FILE = GotToGo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HSI.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Debug;
@@ -595,24 +603,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GotToGo/GotToGo.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sean  Haughton-Scott (AK4RWB2TUN)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AK4RWB2TUN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GotToGo",
 				);
 				INFOPLIST_FILE = GotToGo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HSI.GotToGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GotToGo/GotToGo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Release;

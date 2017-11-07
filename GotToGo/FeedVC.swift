@@ -209,6 +209,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
                         }
                     }
 
+                    if self.posts.count == 0 {
+                        let alert = UIAlertController(title: "Oh No!!!", message: "It Looks Like We Haven't Mapped Your Town Yet. Please Go To The More Info tab and Request Your Town mapped!", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
                     self.getDataForMapAnnotation()
                 }
 
