@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -27,42 +27,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="0cC-Uc-Ar4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wig-Ql-1cr">
-                                <rect key="frame" x="59" y="534" width="257" height="80"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irB-FH-Ss3">
-                                        <rect key="frame" x="0.0" y="0.0" width="257" height="35"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="No Account? Sign Up With Email"/>
-                                        <connections>
-                                            <action selector="noAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YNA-OP-4g7"/>
-                                            <segue destination="wrn-fF-2Zi" kind="presentation" identifier="goNewUser" id="08q-3p-kJg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAj-1f-sY7">
-                                        <rect key="frame" x="0.0" y="45" width="257" height="35"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="Forgot Your Password?">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="6l7-0Z-N3Z" kind="show" id="LbI-Ae-eZq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <variation key="heightClass=regular-widthClass=regular" alignment="fill" distribution="fill" spacing="7"/>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Kzd-It-cDM">
-                                <rect key="frame" x="80" y="473" width="215" height="41"/>
+                                <rect key="frame" x="80" y="473" width="254" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-ir-fQh">
-                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="41"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                         <state key="normal" title="Facebook">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80q-Ta-NOO">
-                                        <rect key="frame" x="137.5" y="0.0" width="77.5" height="41"/>
+                                        <rect key="frame" x="156" y="0.0" width="98" height="41"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                         <state key="normal" title="Google">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,10 +60,10 @@
                                 <variation key="heightClass=regular-widthClass=regular" alignment="fill" distribution="fillProportionally" spacing="35"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hn1-7h-V92">
-                                <rect key="frame" x="90" y="253" width="195" height="107"/>
+                                <rect key="frame" x="90" y="253" width="234" height="107"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uvh-TV-e6o">
-                                        <rect key="frame" x="22.5" y="0.0" width="150" height="45"/>
+                                        <rect key="frame" x="42" y="0.0" width="150" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="5nC-GG-ond"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="nCG-Un-0No">
@@ -101,7 +76,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uOF-Vt-ecH">
-                                        <rect key="frame" x="22.5" y="62" width="150" height="45"/>
+                                        <rect key="frame" x="42" y="62" width="150" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Uzy-Ye-1t7"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="czy-JL-MBs"/>
@@ -114,10 +89,10 @@
                                 <variation key="heightClass=regular-widthClass=regular" alignment="center" distribution="fill" spacing="10"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QLF-gv-tPC">
-                                <rect key="frame" x="126" y="386" width="123" height="70"/>
+                                <rect key="frame" x="145.66666666666666" y="386" width="122.99999999999997" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG3-pO-0fk">
-                                        <rect key="frame" x="34.5" y="0.0" width="54" height="35"/>
+                                        <rect key="frame" x="34.666666666666686" y="0.0" width="54" height="35"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Sign In"/>
                                         <connections>
@@ -134,7 +109,7 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got_to_go_with_photo" translatesAutoresizingMaskIntoConstraints="NO" id="Z2m-fo-mDh">
-                                <rect key="frame" x="115.5" y="143" width="144" height="35"/>
+                                <rect key="frame" x="135" y="143" width="144" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="HeP-3N-Jye">
                                         <variation key="heightClass=regular-widthClass=regular" constant="55"/>
@@ -144,6 +119,31 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wig-Ql-1cr">
+                                <rect key="frame" x="63" y="534" width="288" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irB-FH-Ss3">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="No Account? Sign Up With Email"/>
+                                        <connections>
+                                            <action selector="noAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YNA-OP-4g7"/>
+                                            <segue destination="wrn-fF-2Zi" kind="presentation" identifier="goNewUser" id="08q-3p-kJg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAj-1f-sY7">
+                                        <rect key="frame" x="0.0" y="45" width="288" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Forgot Your Password?">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="6l7-0Z-N3Z" kind="show" id="LbI-Ae-eZq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" alignment="fill" distribution="fill" spacing="7"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -201,14 +201,14 @@
                         <viewControllerLayoutGuide type="bottom" id="ZdD-5L-d6K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="omk-aG-8zZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="9oR-6g-dHP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="LWy-KH-xkP">
-                                <rect key="frame" x="10" y="35" width="355" height="25"/>
+                                <rect key="frame" x="10" y="35" width="394" height="25"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJq-pA-5WU">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="25"/>
@@ -221,7 +221,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got_to_go_with_photo" translatesAutoresizingMaskIntoConstraints="NO" id="uCQ-3p-0nj">
-                                        <rect key="frame" x="131.5" y="0.0" width="102" height="25"/>
+                                        <rect key="frame" x="151" y="0.0" width="102" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="102" id="Gan-PH-LMO"/>
                                             <constraint firstAttribute="height" constant="25" id="uf5-V9-ESQ">
@@ -230,7 +230,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WY-mp-6Vh">
-                                        <rect key="frame" x="287" y="0.0" width="68" height="25"/>
+                                        <rect key="frame" x="326" y="0.0" width="68" height="25"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Sign Out">
                                             <color key="titleColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,14 +242,14 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bh0-Lv-FjX" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HCv-T2-tb1"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QAL-1I-eRF">
-                                <rect key="frame" x="0.0" y="467" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="536" width="414" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="325" id="Nda-aW-Nh8"/>
@@ -257,24 +257,24 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="53" id="8yB-YN-oc7" customClass="PostCell" customModule="GotToGo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8yB-YN-oc7" id="8Qr-Z9-uWe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GBj-Pf-onj">
-                                                    <rect key="frame" x="8" y="10" width="359" height="33"/>
+                                                    <rect key="frame" x="8" y="10" width="398" height="33"/>
                                                     <subviews>
                                                         <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadman Plaza &amp; Brooklyn War Memorial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gs6-wd-9Ai">
-                                                            <rect key="frame" x="0.0" y="16.5" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="16.666666666666668" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="135-09 Westchester Boulevard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-4k-3sk">
-                                                            <rect key="frame" x="-8" y="16.5" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="-8" y="16.666666666666668" width="0.0" height="0.0"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="0yC-3y-Tgz"/>
                                                             </constraints>
@@ -283,7 +283,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Yes or No" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BEt-0V-VMU">
-                                                            <rect key="frame" x="-8" y="8.5" width="0.0" height="16"/>
+                                                            <rect key="frame" x="-8" y="8.6666666666666679" width="0.0" height="15.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -307,25 +307,25 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KZ-e0-hzn">
-                                <rect key="frame" x="0.0" y="434.5" width="375" height="32.5"/>
+                                <rect key="frame" x="0.0" y="503.66666666666669" width="414" height="32.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="yv2-fY-TDP">
-                                        <rect key="frame" x="5" y="8" width="365" height="19.5"/>
+                                        <rect key="frame" x="5" y="7.9999999999999982" width="404" height="19.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Closest To Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxA-n1-Bvl">
-                                                <rect key="frame" x="0.0" y="1.5" width="84.5" height="16.5"/>
+                                                <rect key="frame" x="0.0" y="1.6666666666666856" width="84.333333333333329" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-QK-BVY">
-                                                <rect key="frame" x="153.5" y="1.5" width="48.5" height="16.5"/>
+                                                <rect key="frame" x="173.33333333333334" y="1.6666666666666856" width="48.333333333333343" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicap Access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-ll-HZQ">
-                                                <rect key="frame" x="262" y="1.5" width="103" height="16.5"/>
+                                                <rect key="frame" x="301.33333333333331" y="1.6666666666666856" width="102.66666666666669" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -343,7 +343,7 @@
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J1Q-yC-46C">
-                                <rect key="frame" x="0.0" y="85" width="375" height="349.5"/>
+                                <rect key="frame" x="0.0" y="85.000000000000028" width="414" height="418.66666666666674"/>
                                 <gestureRecognizers/>
                             </mapView>
                         </subviews>
@@ -391,14 +391,14 @@
                         <viewControllerLayoutGuide type="bottom" id="nxd-H7-vUd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GSa-nj-rKx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="BnT-pM-1gs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQT-g9-YQi">
-                                <rect key="frame" x="258.5" y="50" width="90.5" height="31"/>
+                                <rect key="frame" x="278" y="50" width="106" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="Search Again">
                                     <color key="titleColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -408,7 +408,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zet-EG-c1N" userLabel="Home Page">
-                                <rect key="frame" x="146.5" y="555" width="82" height="82"/>
+                                <rect key="frame" x="166" y="624" width="82" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="o62-Og-bba">
                                         <variation key="heightClass=regular-widthClass=regular" constant="82"/>
@@ -423,23 +423,26 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got_to_go_with_photo" translatesAutoresizingMaskIntoConstraints="NO" id="5Qw-KL-A1c">
-                                <rect key="frame" x="136.5" y="53" width="102" height="28"/>
+                                <rect key="frame" x="156" y="53" width="102" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="V67-gf-FW6"/>
                                     <constraint firstAttribute="height" constant="28" id="fKb-kU-2u6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Got To Go is a product of HScottIndustries. All Rights Reserved 2017." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pro-wF-pY0">
-                                <rect key="frame" x="8" y="498" width="359" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Got To Go is a product of HScottIndustries. All Rights Reserved 2017." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pro-wF-pY0">
+                                <rect key="frame" x="8" y="475.33333333333331" width="398" height="128.66666666666669"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wzz-ih-mFX">
-                                <rect key="frame" x="12" y="280" width="351" height="188"/>
+                                <rect key="frame" x="12" y="257.33333333333331" width="390" height="188"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Report Any Issue with the App, Click here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZt-DS-heb">
-                                        <rect key="frame" x="0.0" y="0.0" width="350.5" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350.33333333333331" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="0zM-jD-ADd">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="28"/>
@@ -504,7 +507,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Questions or Map Requests:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gq-DF-VnQ">
-                                        <rect key="frame" x="0.0" y="127" width="286" height="23"/>
+                                        <rect key="frame" x="0.0" y="127" width="285.66666666666669" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="omH-yF-BVW">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
@@ -538,14 +541,14 @@
                                 <variation key="heightClass=regular-widthClass=regular" spacing="20"/>
                             </stackView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uH-TZ-Yqv">
-                                <rect key="frame" x="8" y="121" width="359" height="129"/>
+                                <rect key="frame" x="8" y="121" width="398" height="106.33333333333331"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Got To Go Is Currently Available In San Francisco &amp; New York City Now! If You Want Your City Mapped, Just Email Us! Send Your Email With Your State &amp; City To Get Us Started!</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 </variation>
                             </textView>
                         </subviews>
@@ -561,7 +564,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="12"/>
                             </constraint>
                             <constraint firstItem="zet-EG-c1N" firstAttribute="top" secondItem="pro-wF-pY0" secondAttribute="bottom" constant="20" id="C1F-Wd-MUy">
-                                <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                             </constraint>
                             <constraint firstItem="nxd-H7-vUd" firstAttribute="top" secondItem="BnT-pM-1gs" secondAttribute="bottom" id="Fcn-cV-eDb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OQT-g9-YQi" secondAttribute="trailing" constant="10" id="LlS-oX-9QD"/>
@@ -588,7 +591,7 @@
                             </constraint>
                             <constraint firstItem="BnT-pM-1gs" firstAttribute="leading" secondItem="GSa-nj-rKx" secondAttribute="leading" id="oJO-Hx-5Jd"/>
                             <constraint firstItem="pro-wF-pY0" firstAttribute="top" secondItem="Wzz-ih-mFX" secondAttribute="bottom" constant="30" id="pr7-0Q-cbC">
-                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="125"/>
                             </constraint>
                             <constraint firstItem="5Qw-KL-A1c" firstAttribute="top" secondItem="Dg4-LT-vHo" secondAttribute="bottom" constant="33" id="prI-4K-COc"/>
                             <constraint firstAttribute="trailing" secondItem="pro-wF-pY0" secondAttribute="trailing" constant="8" id="s4p-BH-ABd"/>
@@ -612,14 +615,14 @@
                         <viewControllerLayoutGuide type="bottom" id="1Sv-3s-HLi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HvP-xw-x4u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="g3i-kc-JnX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpx-4H-JbD">
-                                <rect key="frame" x="123" y="40" width="238" height="33"/>
+                                <rect key="frame" x="162" y="40" width="238" height="33"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="Wait, I Remember My Password!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -629,7 +632,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's Your Email?" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="46o-YC-2fL" customClass="TextBoxes" customModule="GotToGo" customModuleProvider="target">
-                                <rect key="frame" x="90" y="320" width="195" height="40"/>
+                                <rect key="frame" x="109.66666666666669" y="320" width="195" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="195" id="RIm-Md-Uvh"/>
                                     <constraint firstAttribute="height" constant="40" id="sRh-ny-h6n"/>
@@ -638,8 +641,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" editable="NO" text="Please Enter Your Email Below And A New Password will Be Sent To You:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3FH-OK-62E">
-                                <rect key="frame" x="46" y="183" width="252" height="87"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" editable="NO" text="Please Enter Your Email Below And A New Password will Be Sent To You:" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FH-OK-62E">
+                                <rect key="frame" x="50" y="183" width="283" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="liM-aO-xhl"/>
                                 </constraints>
@@ -648,7 +651,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjg-f4-8An">
-                                <rect key="frame" x="104" y="440" width="167" height="44"/>
+                                <rect key="frame" x="123.66666666666669" y="440" width="167" height="44"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <state key="normal" title="Reset Password"/>
                                 <connections>
@@ -695,14 +698,14 @@
                         <viewControllerLayoutGuide type="bottom" id="oSY-gN-0Uq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BPd-WQ-zcQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="LHP-0B-S9l">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQ6-wg-jyR">
-                                <rect key="frame" x="123" y="20" width="247" height="35"/>
+                                <rect key="frame" x="162" y="20" width="247" height="35"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Wait, I Remember My Password">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -712,7 +715,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Find The Nearest and Free Restroom, Bathroom, Washroom, Powder Room, Water Closet, or Place To Tinkle, As Soon As You Need It!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbh-Pq-ily">
-                                <rect key="frame" x="58" y="142" width="259" height="167"/>
+                                <rect key="frame" x="62" y="142" width="290" height="236"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -721,7 +724,7 @@
                                 </variation>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's Your Email?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAU-PZ-agz" customClass="TextBoxes" customModule="GotToGo" customModuleProvider="target">
-                                <rect key="frame" x="90" y="332" width="195" height="40"/>
+                                <rect key="frame" x="109.33333333333331" y="401" width="195" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="195" id="N0s-CW-EaJ"/>
                                     <constraint firstAttribute="height" constant="40" id="zvA-IS-Okf"/>
@@ -731,7 +734,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCa-ns-NIQ">
-                                <rect key="frame" x="145.5" y="504" width="84" height="42"/>
+                                <rect key="frame" x="165" y="573" width="84" height="42"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                                 <state key="normal" title="Sign Up"/>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -743,7 +746,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-cD-FoO" customClass="TextBoxes" customModule="GotToGo" customModuleProvider="target">
-                                <rect key="frame" x="146" y="418" width="83.5" height="40"/>
+                                <rect key="frame" x="165.33333333333334" y="487" width="83.333333333333343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aKP-bT-SZt"/>
                                 </constraints>
@@ -792,7 +795,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sF-vj-kkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="922"/>
+            <point key="canvasLocation" x="211" y="1000"/>
         </scene>
         <!--PreviewVC-->
         <scene sceneID="bx7-46-JDG">
@@ -803,33 +806,33 @@
                         <viewControllerLayoutGuide type="bottom" id="h9a-Rj-j7O"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KZ1-kd-29h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-oQ-J0m">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="RTk-9C-rMf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pFD-SO-Ceh">
-                                <rect key="frame" x="91" y="444.5" width="193" height="67.5"/>
+                                <rect key="frame" x="91" y="514" width="232" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YDu-YO-1MK">
-                                        <rect key="frame" x="0.0" y="0.0" width="193" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="22.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-WF-3iR">
-                                        <rect key="frame" x="0.0" y="22.5" width="193" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="22.333333333333371" width="232" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: Coming Soon " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxy-pA-Bxq">
-                                        <rect key="frame" x="0.0" y="45" width="193" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="44.666666666666629" width="232" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -837,7 +840,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSd-aa-BBO">
-                                <rect key="frame" x="107" y="539" width="161" height="42"/>
+                                <rect key="frame" x="111" y="608" width="192" height="42"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                                 <state key="normal" title="Open In Map"/>
                                 <connections>
@@ -845,7 +848,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9n-ss-5bJ" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="594" width="375" height="73"/>
+                                <rect key="frame" x="19.666666666666657" y="663" width="375" height="73"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="1RK-OS-dGo">
@@ -857,7 +860,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6ib-jc-riy">
-                                <rect key="frame" x="10" y="25" width="355" height="23"/>
+                                <rect key="frame" x="10" y="25" width="394" height="23"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orU-5s-XB2">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="23"/>
@@ -870,14 +873,14 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got_to_go_with_photo" translatesAutoresizingMaskIntoConstraints="NO" id="tU5-iK-IPW">
-                                        <rect key="frame" x="119.5" y="0.0" width="102" height="23"/>
+                                        <rect key="frame" x="139" y="0.0" width="102" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="cG5-YZ-wEQ"/>
                                             <constraint firstAttribute="width" constant="102" id="xb8-HW-8NM"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idc-ji-dc4">
-                                        <rect key="frame" x="249" y="0.0" width="106" height="23"/>
+                                        <rect key="frame" x="288" y="0.0" width="106" height="23"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Search Again">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -889,7 +892,7 @@
                                 </subviews>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="65i-ML-Lhq">
-                                <rect key="frame" x="0.0" y="63" width="375" height="365.5"/>
+                                <rect key="frame" x="0.0" y="63" width="414" height="435"/>
                             </mapView>
                         </subviews>
                         <constraints>
@@ -945,6 +948,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uh9-dP-ucW"/>
-        <segue reference="n1o-T5-jqT"/>
+        <segue reference="CgZ-Xt-111"/>
     </inferredMetricsTieBreakers>
 </document>
