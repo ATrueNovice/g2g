@@ -58,7 +58,7 @@ class newUser: UIViewController, UITextFieldDelegate {
                     Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
                             // Error - Unidentified Email
-                            let alert = UIAlertController(title: "This Email May Have Been Used Before.", message: "Could You Please Verify That This Is the Correct Email", preferredStyle: UIAlertControllerStyle.alert)
+                            let alert = UIAlertController(title: "Please Enter A Longer Password.", message: "Could You Please Enter A Password Longer Than Six Characters.", preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                             }))
                             self.present(alert, animated: true, completion: nil)

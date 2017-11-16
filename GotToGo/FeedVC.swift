@@ -254,14 +254,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMa
         performSegue(withIdentifier: "previewSegue", sender: post)
     }
 
-    /*
-        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-            if let point = view.annotation as? PointAnnotation {
-                print(point)
-                // performSegue(withIdentifier: "previewSegue", sender: point.post)
-            }
-        }
-    */
+  
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {

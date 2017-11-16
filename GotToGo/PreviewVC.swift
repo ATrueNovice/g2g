@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import GoogleMobileAds
+import StoreKit
 
 class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GADInterstitialDelegate  {
 
@@ -64,6 +65,10 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         annotation.subtitle = "Handicap Access " + handi
         self.previewMap.addAnnotation(annotation)
         self.previewMap.setRegion(region, animated: true)
+
+        //In App Review
+        SKStoreReviewController.requestReview()
+
     }
 
     //Initialize Passed Data
@@ -93,6 +98,15 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
                 centerMapOnLocation(location: loc)
                 centerMapped = true
             }
+        }
+    }
+
+    //To Be Used Later
+    func iAd() {
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
         }
     }
 
@@ -149,16 +163,10 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
         print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 
+
+
     //Open In Native Map
     @IBAction func openMap(_ sender: Any) {
-
-
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-
-        }
 
         let regionDistance: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 500, longitudeDelta: 500)
         let coordinate =  CLLocationCoordinate2D(latitude: locationData.latitude, longitude: locationData.longitude)
@@ -172,7 +180,6 @@ class PreviewVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,
 
         mapItem.name = locationData.locationName
         mapItem.openInMaps(launchOptions: options)
-
 
     }
 }
